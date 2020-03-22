@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import img from "./number_2.png";
+import Number1 from "./number_1.png";
+import Number2 from "./number_2.png";
+import Number3 from "./number_3.png";
 
 export const CardHolder = styled.div`
   width: 220px;
@@ -29,7 +31,7 @@ export const FrontSide = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(${img});
+  background-image: ${props => `url(${props.background})`};
   background-size: 100% 100%;
   border-radius: 30px;
 `;

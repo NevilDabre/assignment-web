@@ -7,7 +7,7 @@ import styled from "styled-components";
 const PanelHeading = styled.span`
   font-weight: 500;
   font-size: 20px;
-  color: #ed2553;
+  color: #0b72c2;
 `;
 
 const Accordion = ({ data }) => {

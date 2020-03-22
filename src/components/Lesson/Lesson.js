@@ -5,21 +5,33 @@ import styled from "styled-components";
 import VideoFrame from "./VideoFrame/VideoFrame";
 import ImageWithCaption from "./ImageWithCaption/ImageWithCaption";
 
-const PostHeader = styled.div`
+const PostHeading = styled.div`
   width: 100%;
   h1 {
     font-family: Georgia, serif;
     color: #ed2553;
     font-variant: small-caps;
     text-transform: none;
-    font-weight: 100;
+    font-weight: 500;
+    font-size: ${props => `${3 + props.textSize}em`};
+  }
+`;
+
+const PostSubHeading = styled.div`
+  width: 100%;
+  h2 {
+    font-family: Georgia, serif;
+    color: #ed2553;
+    font-variant: small-caps;
+    font-weight: 300;
+    font-size: ${props => `${1.5 + props.textSize}em`};
   }
 `;
 
 const PostBody = styled.div`
   font-family: "Helvetica Neue", "Lucida Grande", Helvetica, Arial, Verdana,
     sans-serif;
-  font-size: 16px;
+  font-size: ${props => `${1.5 + props.textSize}em`};
   margin-top: 0.5em;
 `;
 
@@ -46,13 +58,12 @@ const ContentBody = styled.div`
   }
 `;
 
-const LessonPost = () => {
+const LessonPost = ({ textSize }) => {
   return (
     <>
-      <PostHeader>
+      <PostHeading textSize={textSize}>
         <h1>Introduction</h1>
-      </PostHeader>
-      {/* <VideoFrame youtubeId="4gFF1-VHHmk" /> */}
+      </PostHeading>
       <PostBody>
         <ContentIntroduction>
           The DNA double helix model was relatively simple and has
@@ -61,6 +72,9 @@ const LessonPost = () => {
           model&#39;s chemical structure had to be able to explain three
           activities:
         </ContentIntroduction>
+        <PostSubHeading>
+          <h2>Activities</h2>
+        </PostSubHeading>
         <ContentFlipCardHolder>
           <FlipCard
             data={[
@@ -87,6 +101,9 @@ const LessonPost = () => {
             turned to exploring how DNA went about carrying out these three
             functions.
           </div>
+          <PostSubHeading>
+            <h2>Functions</h2>
+          </PostSubHeading>
           <div className="body">
             <Accordion
               data={[
@@ -134,6 +151,10 @@ const LessonPost = () => {
             </p>
           </div>
         </ContentBody>
+        <PostSubHeading>
+          <h2>Extra resources</h2>
+        </PostSubHeading>
+        <VideoFrame youtubeId="4gFF1-VHHmk" />
       </PostBody>
     </>
   );
