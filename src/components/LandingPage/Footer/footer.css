@@ -1,9 +1,19 @@
 /* FOOTER */
 footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   background-color: black;
   width: 100vw;
   padding: 20px 0;
+  flex-direction: row;
+}
+
+@media (max-width: 700px) {
+  footer {
+    flex-direction: column;
+  }
+  .social-media-holder {
+    margin: 10px 0px;
+  }
 }

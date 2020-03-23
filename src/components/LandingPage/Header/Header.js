@@ -1,5 +1,6 @@
 import React from "react";
 import "./header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -9,13 +10,10 @@ const Header = () => {
       </h2>
       <nav>
         <li>
-          <a href="https://google.ca">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="https://google.ca">Contact</a>
-        </li>
-        <li>
-          <a href="https://google.ca">Start Learning</a>
+          <Link to="/learningpage">Start Learning</Link>
         </li>
       </nav>
     </header>

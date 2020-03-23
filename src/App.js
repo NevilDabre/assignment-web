@@ -1,19 +1,8 @@
 import React, { useState } from "react";
 import "./styles.css";
-import Lesson from "./components/Lesson/Lesson";
-import Post from "./components/Post/Post";
-import SpeechControl from "./components/SpeechControl/SpeechControl";
-import TextSizeControl from "./components/TextSizeControl/TextSizeControl";
-import styled from "styled-components";
 import LandingPage from "./components/LandingPage/LandingPage";
-
-const ControlHolder = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-`;
+import LearningPage from "./components/LearningPage/LearningPage";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 export default function App() {
   const [textSize, setTextSize] = useState(0);
@@ -32,14 +21,18 @@ export default function App() {
   };
   return (
     <div className="App">
-      {/* <Post>
-        <ControlHolder>
-          <SpeechControl />
-          <TextSizeControl handleTextSizeChanged={handleTextSizeChanged} />
-        </ControlHolder>
-        <Lesson textSize={textSize} />
-      </Post> */}
-      <LandingPage />
+      <Router>
+        <Switch>
+          <Route exact path="/" component={LandingPage} />
+          <Route path="/contact" />
+          <Route path="/learningpage">
+            <LearningPage
+              textSize={textSize}
+              handleTextSizeChanged={handleTextSizeChanged}
+            />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
