@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./styles.css";
 import LandingPage from "./components/LandingPage/LandingPage";
 import LearningPage from "./components/LearningPage/LearningPage";
+import LearningPageLayout from "./components/LearningPage/LearningPageLayout";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 export default function App() {
@@ -26,10 +27,11 @@ export default function App() {
           <Route exact path="/" component={LandingPage} />
           <Route path="/contact" />
           <Route path="/learningpage">
-            <LearningPage
+            <LearningPageLayout />
+            {/* <LearningPage
               textSize={textSize}
               handleTextSizeChanged={handleTextSizeChanged}
-            />
+            /> */}
           </Route>
         </Switch>
       </Router>

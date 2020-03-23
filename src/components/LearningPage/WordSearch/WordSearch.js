@@ -64,9 +64,11 @@ const WordSearch = () => {
           placeholder="Search word"
           onChange={handleChange}
         />
-        <p>{`Type = ` + wordType}</p>
-        <p>{result && `Definition = ` + result.definition}</p>
-        <p>{result && `Example = ` + result.example}</p>
+        <p>{wordType && `Type = ` + wordType}</p>
+        <p>
+          {result && result.definition && `Definition = ` + result.definition}
+        </p>
+        <p>{result && result.example && `Example = ` + result.example}</p>
       </div>
     </div>
   );

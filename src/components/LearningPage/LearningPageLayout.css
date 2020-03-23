@@ -1,0 +1,51 @@
+.main-container,
+.left-panel,
+.footer {
+  margin: 0;
+  border: 1px solid #000000;
+}
+
+.main-container {
+  background: #000000;
+}
+
+.header-panel {
+  background: violet;
+  padding: 40px 0;
+}
+
+@media screen and (min-width: 640px) {
+  .flex-container {
+    display: flex;
+  }
+  .content {
+    flex: 1;
+  }
+  .right-panel {
+    flex: 0 1 300px;
+  }
+}
+
+.wrapper {
+  margin: auto;
+  max-width: 1200px;
+}
+
+.title-section {
+  background: wheat;
+  padding: 20px;
+}
+
+.right-panel {
+  background: teal;
+  padding: 20px;
+}
+
+.content {
+  background: steelblue;
+  padding: 20px;
+}
+
+.footer {
+  background: sienna;
+}
