@@ -1,6 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPlusCircle,
+  faMinusCircle,
+  faFont
+} from "@fortawesome/free-solid-svg-icons";
 
 import styled from "styled-components";
 
@@ -23,12 +27,15 @@ const TextSizeControl = ({ handleTextSizeChanged }) => {
     <TextControlHolder>
       <h3>Text size:</h3>
       <FontAwesomeIconElement
-        icon={faMinus}
+        icon={faMinusCircle}
         onClick={() => handleTextSizeChanged("decrease")}
       />
-      <span>A</span>
       <FontAwesomeIconElement
-        icon={faPlus}
+        icon={faFont}
+        onClick={() => handleTextSizeChanged()}
+      />
+      <FontAwesomeIconElement
+        icon={faPlusCircle}
         onClick={() => handleTextSizeChanged("increase")}
       />
     </TextControlHolder>

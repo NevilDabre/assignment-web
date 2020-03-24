@@ -1,7 +1,5 @@
 .video-holder {
   text-align: center;
-  width: 80%;
-  margin-left: 10%;
   height: 400px;
 }
 
@@ -9,4 +7,5 @@
   width: 100%;
   height: 100%;
   display: block;
+  padding: 0 2em 2em 2em;
 }

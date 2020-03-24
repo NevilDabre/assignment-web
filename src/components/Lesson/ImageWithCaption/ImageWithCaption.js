@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const FigureElemnt = styled.figure`
+const FigureElement = styled.figure`
   border: thin #c0c0c0 solid;
   display: flex;
   flex-flow: column;
@@ -23,7 +23,7 @@ const FigcaptionElement = styled.figcaption`
 const ImageWithCaption = () => {
   return (
     <div>
-      <FigureElemnt>
+      <FigureElement>
         <ImageElement
           alt="Watson and Crick DNA Model"
           style={{ borderRadius: "25px" }}
@@ -32,7 +32,7 @@ const ImageWithCaption = () => {
           height="100%"
         />
         <FigcaptionElement>Watson and Crick DNA Model</FigcaptionElement>
-      </FigureElemnt>
+      </FigureElement>
     </div>
   );
 };

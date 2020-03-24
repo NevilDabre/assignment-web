@@ -1,18 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import SearchInput from "./SearchInput/SearchInput";
 import "./wordsearch.css";
-var app_id = "542880cd";
-var app_key = "05058d1b9064cde14616500e6a4e14cd";
-const language = "en";
-const word_id = "Ace";
-const url =
-  "https://od-api.oxforddictionaries.com:443/api/v2/entries/en/" +
-  word_id.toLowerCase();
-const urlFR =
-  "https://od-api.oxforddictionaries.com:443/api/v2/stats/frequency/word/" +
-  language +
-  "/?corpus=nmc&lemma=" +
-  word_id.toLowerCase();
 
 const WordSearch = () => {
   const [word, setWord] = useState();
@@ -23,7 +12,7 @@ const WordSearch = () => {
     setWord(event.target.value);
   };
 
-  const getWordMeaning = () => {
+  const handleSearchDictionary = () => {
     if (word) {
       axios({
         method: "GET",
@@ -55,21 +44,21 @@ const WordSearch = () => {
   };
 
   return (
-    <div className="card">
-      <div className="wordsearch-container">
-        <input
-          className="search-input"
-          onClick={getWordMeaning}
-          type="text"
-          placeholder="Search word"
-          onChange={handleChange}
-        />
-        <p>{wordType && `Type = ` + wordType}</p>
-        <p>
-          {result && result.definition && `Definition = ` + result.definition}
-        </p>
-        <p>{result && result.example && `Example = ` + result.example}</p>
-      </div>
+    <div className="wordsearch-card wordsearch-content-wrapper">
+      <h2>Dictionary</h2>
+      <SearchInput
+        handleSearchDictionary={handleSearchDictionary}
+        handleChange={handleChange}
+      />
+      <p className="word-info">
+        <em>{wordType}</em>
+      </p>
+      <p className="word-info">
+        {result && result.definition && `Definition: ` + result.definition}
+      </p>
+      <p className="word-info light">
+        {result && result.example && `"` + result.example + '"'}
+      </p>
     </div>
   );
 };

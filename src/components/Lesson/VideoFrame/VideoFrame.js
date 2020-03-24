@@ -13,12 +13,6 @@ const Video = ({ youtubeId }) => {
       />
     </div>
   );
-
-  // return (
-  //   <div className="main">
-  //     <iframe className="item" />
-  //   </div>
-  // );
 };
 
 export default Video;

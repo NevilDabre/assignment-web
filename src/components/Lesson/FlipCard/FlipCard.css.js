@@ -4,8 +4,8 @@ import Number2 from "./number_2.png";
 import Number3 from "./number_3.png";
 
 export const CardHolder = styled.div`
-  width: 220px;
-  height: 300px;
+  width: 170px;
+  height: 220px;
   position: relative;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 30px;

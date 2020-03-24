@@ -1,18 +1,33 @@
-.card {
-  position: relative;
-  width: 90%;
-  margin: 200px auto;
-  border-radius: 25px;
-  box-shadow: 7px 7px 50px 0px rgba(0, 0, 0, 0.7);
+.wordsearch-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding-bottom: 15px;
+  margin: 20px 0;
+  padding: 10px;
 }
 
-.wordsearch-container {
+.wordsearch-content-wrapper {
   display: flex;
   flex-direction: column;
-  height: 200px;
-  padding: 2rem;
+  
+}
+
+.wordsearch-content-wrapper h2 {
+  text-align: left;
+  margin: 10px 10px 0;
 }
 
 .search-input {
-  height: 20px;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.word-info{
+  margin: 10px 10px 0;
+}
+
+.light{
+  color: rgb(0, 0, 0, 0.7)
 }
