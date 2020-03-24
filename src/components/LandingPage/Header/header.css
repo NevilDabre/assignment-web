@@ -7,8 +7,22 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #fff;
+  color: #ff575a;
   padding: 35px 100px 0;
+}
+
+header.active {
+  position: fixed;
+  background: #000;
+  color: #ff575a;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  -webkit-transition: all 1s linear;
+  -moz-transition: all 1s linear;
+  -o-transition: all 1s linear;
+  transition: all 1s linear;
+  opacity: 0.7;
 }
 
 header h2 {
