@@ -1,12 +1,7 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPlusCircle,
-  faMinusCircle,
-  faFont
-} from "@fortawesome/free-solid-svg-icons";
 
 import styled from "styled-components";
+import IconButton from "../CommonElement/IconButton/IconButton"
 
 const TextControlHolder = styled.div`
   display: flex;
@@ -15,29 +10,14 @@ const TextControlHolder = styled.div`
   flex: 1;
 `;
 
-const FontAwesomeIconElement = styled(FontAwesomeIcon)`
-  &:hover {
-    transform: scale(1.5);
-  }
-  transition: all 0.2s ease-in-out;
-`;
 
 const TextSizeControl = ({ handleTextSizeChanged }) => {
   return (
     <TextControlHolder>
       <h3>Text size:</h3>
-      <FontAwesomeIconElement
-        icon={faMinusCircle}
-        onClick={() => handleTextSizeChanged("decrease")}
-      />
-      <FontAwesomeIconElement
-        icon={faFont}
-        onClick={() => handleTextSizeChanged()}
-      />
-      <FontAwesomeIconElement
-        icon={faPlusCircle}
-        onClick={() => handleTextSizeChanged("increase")}
-      />
+      <IconButton handleOnClick={() => handleTextSizeChanged("decrease")} iconName="faMinusCircle" title="Decrease text size button" srText="Decrease text size button" />
+      <IconButton handleOnClick={() => handleTextSizeChanged()} iconName="faFont" title="Default text size button" srText="Default text size button" />
+      <IconButton handleOnClick={() => handleTextSizeChanged("increase")} iconName="faPlusCircle" title="Increase text size button" srText="Increase text size button" />
     </TextControlHolder>
   );
 };

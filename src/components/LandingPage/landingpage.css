@@ -14,3 +14,16 @@ a {
   cursor: pointer;
   color: inherit;
 }
+
+a.banner-btn {
+  color: #fff;
+  padding: 15px 35px;
+  background: #ed2553;
+  border-radius: 50px;
+}
+
+.banner-btn:hover {
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.75);
+  box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.75);
+}

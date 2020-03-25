@@ -75,14 +75,14 @@ console.log('title', title);
     }
     return (
       <ModalHolder showModal={showModal}>
-        <div class="modal-content">
-          <div class="modal-header">
-            <span onClick={closeModal} class="close">
+        <div className="modal-content">
+          <div className="modal-header">
+            <span onClick={closeModal} className="close">
               &times;
             </span>
             <h2>{`${lessonNote && lessonNote.id ? "Edit " : "Add "}`} Note</h2>
           </div>
-          <div class="modal-body">
+          <div className="modal-body">
             <TextField
               id="title"
               name="title"
@@ -106,7 +106,7 @@ console.log('title', title);
               value={currentNoteDescription}
             />
           </div>
-          <div class="modal-footer">
+          <div className="modal-footer">
             <Button
               onClick={handleCreateEditNote}
               variant="contained"

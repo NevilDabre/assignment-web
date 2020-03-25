@@ -18,7 +18,6 @@ const ControlHolder = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 2em;
-  font-family: "Martel Sans", sans-serif;
 `;
 
 const PostHeading = styled.div`
@@ -98,6 +97,7 @@ const ContentBody = styled.div`
 const LessonPost = ({ wordSearchRef, lessonNoteRef }) => {
   const [textSize, setTextSize] = useState(0);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [bannerImageSrc, setBannerImageSrc] = useState("https://signage.uiowa.edu/sites/signage.uiowa.edu/files/slides/biology_slide2.jpg");
   const popOverTextParagraphRef = createRef();
 
   const handleAccordionChange = index => {
@@ -116,23 +116,21 @@ const LessonPost = ({ wordSearchRef, lessonNoteRef }) => {
 
   return (
     <>
-      {/* <PopOver selectionRef={popOverTextParagraphRef}>
-        <button onClick={() => console.log("pressed.")}> </button>
-      </PopOver> */}
       <div className="card">
         <div className="thumbnail">
           <img
-            src="https://signage.uiowa.edu/sites/signage.uiowa.edu/files/slides/biology_slide2.jpg"
-            alt="biology"
-            class="lesson-image"
+            src={bannerImageSrc}
+            alt="biology dna representation"
+            className="lesson-image"
           />
+            <div className="lesson-image-left">Grade 12 Biology</div>
         </div>
         <HighlightToolbar ref={popOverTextParagraphRef} wordSearchRef={wordSearchRef} lessonNoteRef={lessonNoteRef} />
         <ControlHolder>
           <SpeechControl />
           <TextSizeControl handleTextSizeChanged={handleTextSizeChanged} />
         </ControlHolder>
-        <div className="body" ref={popOverTextParagraphRef}>
+        <div className="body" ref={popOverTextParagraphRef} role="article">
           <PostHeading textSize={textSize}>
             <h1>Introduction</h1>
           </PostHeading>
@@ -219,6 +217,7 @@ const LessonPost = ({ wordSearchRef, lessonNoteRef }) => {
                   biomolecules, it would be a very difficult task to work on the
                   biochemistry of cellular reactions.
                 </p>
+                <br />
                 <p>
                   Determining the DNA structure paved the way for these kinds of
                   studies. It opened up the door to the world of microbiology,

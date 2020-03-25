@@ -23,3 +23,13 @@
   width: 100%;
   border-radius: 10px 10px 0px 0px;
 }
+
+.lesson-image-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  font-size: 2em;
+    color: rgba(255,255,255,0.84);
+    line-height: 48px;
+    font-weight: 400;
+}

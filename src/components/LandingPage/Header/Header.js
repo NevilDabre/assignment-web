@@ -1,6 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
+import styled from "styled-components";
+
+const FontAwesomeIconElement = styled(FontAwesomeIcon)`
+  &:hover {
+    transform: scale(1.5);
+  }
+  transition: all 0.2s ease-in-out;
+`;
 
 const Header = () => {
   const [headerActive, setHeaderActive] = useState(false);
@@ -25,16 +35,25 @@ const Header = () => {
     };
   }, []);
   return (
-    <header className={headerActive ? "active" : ""}>
+    <header className={headerActive ? "active" : ""} role="navigation" aria-label="Main" id="header">
       <h2>
-        <a href="https://google.ca">D2L</a>
+        <Link to="/">
+          <FontAwesomeIconElement
+            aria-hidden="true"
+            title="learning website icon"
+            icon={faGraduationCap}
+          />
+          <span className="sr-only">Website Logo</span> D2L
+        </Link>
       </h2>
       <nav>
         <li>
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/learningpage">Start Learning</Link>
+          <Link to="/learningpage" className="banner-btn-link">
+            Start Learning
+          </Link>
         </li>
       </nav>
     </header>

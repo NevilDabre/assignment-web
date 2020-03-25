@@ -13,10 +13,21 @@ const LearningPageLayout = () => {
 
   return (
     <div className="main-container">
+          <ul className="skip-links">
+        <li>
+          <a href="#header">Skip to navigation</a>
+        </li>
+        <li>
+          <a href="#content">Skip to content</a>
+        </li>
+        <li>
+          <a href="#footer">Skip to footer</a>
+        </li>
+      </ul>
       <div className="header-panel">
         <Header />
       </div>
-      <div className="flex-container wrapper">
+      <div className="flex-container wrapper" id="content">
         <div className="content">
           <LearningPage wordSearchRef={wordSearchRef} />
         </div>
@@ -26,7 +37,7 @@ const LearningPageLayout = () => {
           <LessonNoteHolder ref={lessonNoteRef}/>
         </div>
       </div>
-      <div className="footer">
+      <div className="footer" id="footer">
         <Footer />
       </div>
     </div>

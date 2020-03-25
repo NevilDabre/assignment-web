@@ -31,10 +31,22 @@ const ContactCard = () => {
       <p className="title">Science Department</p>
       <p className="school-name">St. John High School</p>
       <div className="social-media-holder">
-        <FontAwesomeIconElement icon={faFacebook} />
-        <FontAwesomeIconElement icon={faTwitter} />
-        <FontAwesomeIconElement icon={faLinkedin} />
-        <FontAwesomeIconElement icon={faYoutube} />
+        <a href="#">
+          <FontAwesomeIconElement icon={faFacebook} title="Facebook link" />
+          <span className="sr-only">Facebook link</span>
+        </a>
+        <a href="#">
+          <FontAwesomeIconElement icon={faTwitter} title="Twitter link" />
+          <span className="sr-only">Twitter link</span>
+        </a>
+        <a href="#">
+          <FontAwesomeIconElement icon={faLinkedin} title="Linkedin link" />
+          <span className="sr-only">Linkedin link</span>
+        </a>
+        <a href="#">
+          <FontAwesomeIconElement icon={faYoutube} title="Youtube link" />
+          <span className="sr-only">Youtube link</span>
+        </a>
       </div>
       <div>
         <button className="contact-button">Contact</button>

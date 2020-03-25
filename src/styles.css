@@ -1,9 +1,23 @@
 .App {
-  /* font-family: sans-serif;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap; */
+  font-family: 'Archivo', 'Alegreya', serif;
+}
+
+.skip-links {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.skip-links a{
+  position: absolute;
+  top: -3em;
+  background-color: #000;
+  color: #fff;
+  padding: 0.5em 0.75em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.skip-links a:focus{
+  top: 0;
 }

@@ -26,7 +26,11 @@ const SearchInput = ({ handleSearchDictionary, handleChange }) => {
         onChange={handleChange}
       />
       <IconButton onClick={handleSearchDictionary} aria-label="search">
-        <FontAwesomeIcon icon={faSearch} />
+        <FontAwesomeIcon
+          icon={faSearch}
+          title="Search word in dictionary button"
+        />
+        <span className="sr-only">Search word in dictionary button</span>
       </IconButton>
     </PaperElement>
   );

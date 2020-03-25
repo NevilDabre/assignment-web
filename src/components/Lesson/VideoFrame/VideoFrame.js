@@ -6,10 +6,11 @@ const Video = ({ youtubeId }) => {
     <div className="video-holder">
       <iframe
         className="video"
-        title="educational-video"
+        title="DNA educational video"
         align="middle"
         src={`https://www.youtube.com/embed/${youtubeId}`}
         frameBorder="0"
+        aria-label="DNA educational video content"
       />
     </div>
   );
