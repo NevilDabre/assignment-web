@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -8,6 +8,8 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import styled from "styled-components";
 import "./contactcard.css";
+import ContactMessageModal from "./ContactMessageModal/ContactMessageModal";
+import MainButtonElement from "../../CommonElement/BrandButton/BrandButton.css";
 
 const FontAwesomeIconElement = styled(FontAwesomeIcon)`
   &:hover {
@@ -19,8 +21,21 @@ const FontAwesomeIconElement = styled(FontAwesomeIcon)`
 `;
 
 const ContactCard = () => {
+  const [showModal, setShowModal] = useState(false);
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const handleOpenModal = () => {
+    setShowModal(true);
+  };
+
   return (
     <div className="contact-card">
+      <ContactMessageModal
+        showModal={showModal}
+        closeModal={handleCloseModal}
+      />
       <img
         src="https://images.unsplash.com/photo-1506919258185-6078bba55d2a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2015&q=80"
         className="contact-image"
@@ -49,7 +64,13 @@ const ContactCard = () => {
         </a>
       </div>
       <div>
-        <button className="contact-button">Contact</button>
+        <MainButtonElement
+          style={{ padding: "8px" }}
+          className="contact-button-updated"
+          onClick={handleOpenModal}
+        >
+          Contact
+        </MainButtonElement>
       </div>
     </div>
   );

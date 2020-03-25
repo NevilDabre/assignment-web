@@ -7,14 +7,14 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #ff575a;
+  color: #ed2553;
   padding: 25px 100px 10px;
 }
 
 header.active {
   position: fixed;
   background: #000;
-  color: #ff575a;
+  color: #ed2553;
   -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
@@ -61,7 +61,6 @@ header nav li:last-child {
     margin: 0 7px;
   }
 }
-
 
 .banner-btn-link {
   color: #fff;

@@ -1,24 +1,10 @@
 import React, { useState, useEffect, forwardRef, useImperativeHandle } from "react";
-import "./notemodal.css";
 import styled from "styled-components";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { LN_CREATE_NOTE, LN_EDIT_NOTE } from "../Context/LessonNoteContextType";
-
-const ModalHolder = styled.div`
-  display: ${props =>
-    props.showModal ? "block" : "none"}; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-`;
+import ModalHolder from "../../../CommonElement/ModalHolder/ModalHolder";
+import BrandButton from '../../../CommonElement/BrandButton/BrandButton.css'
 
 const NoteModal = forwardRef(
   ({ closeModal, showModal, lessonNote, dispatch }, ref) => {
@@ -44,7 +30,6 @@ const NoteModal = forwardRef(
     };
 
     const handleCreateEditNote = title => {
-console.log('title', title);
       if (lessonNote && lessonNote.id) {
         dispatch({
           type: LN_EDIT_NOTE,
@@ -107,13 +92,9 @@ console.log('title', title);
             />
           </div>
           <div className="modal-footer">
-            <Button
-              onClick={handleCreateEditNote}
-              variant="contained"
-              color="primary"
-            >
+          <BrandButton onClick={handleCreateEditNote} className="button-updated"> 
               Save
-            </Button>
+            </BrandButton>
           </div>
         </div>
       </ModalHolder>
