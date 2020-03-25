@@ -1,0 +1,38 @@
+.lessonnote-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding-bottom: 15px;
+  padding: 10px;
+  margin: auto;
+  margin-bottom: 2em;
+}
+
+.lessonnote-content-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.lessonnote-content-wrapper h2 {
+  text-align: left;
+  margin: 10px 10px 0;
+}
+
+.lessonnote-content-wrapper li {
+  margin: 10px;
+  color: #000;
+  font-size: 18px;
+  line-height: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.lessonnote-content-wrapper li .list-control {
+  margin: 0 5px;
+}
+
+.lessonnote-content-wrapper .empty-placeholder {
+  margin: 25px;
+  color: rgba(0, 0, 0, 0.4);
+}

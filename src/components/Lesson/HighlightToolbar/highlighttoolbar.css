@@ -1,0 +1,11 @@
+.tooltiptext {
+  width: 100px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  display: inline-block;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+}

@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, createRef, useEffect } from "react";
 import FlipCard from "./FlipCard/FlipCard";
 import Accordion from "./Accordion/Accordion";
 import styled from "styled-components";
 import VideoFrame from "./VideoFrame/VideoFrame";
 import ImageCarousel from "./ImageCarousel/ImageCarousel";
+import HighlightToolbar from "./HighlightToolbar/HighlightToolbar";
 import "./lesson.css";
 
 import SpeechControl from "../SpeechControl/SpeechControl";
 import TextSizeControl from "../TextSizeControl/TextSizeControl";
+import PopOver from "react-text-selection-popover";
 
 const ControlHolder = styled.div`
   display: flex;
@@ -31,6 +33,22 @@ const PostHeading = styled.div`
     color: rgba(0, 0, 0, 0.84);
     line-height: 48px;
     font-weight: 400;
+    word-wrap: wrap;
+  }
+`;
+
+const PostSubline = styled.div`
+  width: 100%;
+  margin: 2em;
+  color: rgba(0, 0, 0, 0.4);
+  h2 {
+    font-size: ${props => {
+      console.log(props);
+      return `${1.5 + props.textSize}em`;
+    }};
+    text-align: left;
+
+    font-weight: 200;
     word-wrap: wrap;
   }
 `;
@@ -77,9 +95,10 @@ const ContentBody = styled.div`
   }
 `;
 
-const LessonPost = () => {
+const LessonPost = ({ wordSearchRef, lessonNoteRef }) => {
   const [textSize, setTextSize] = useState(0);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const popOverTextParagraphRef = createRef();
 
   const handleAccordionChange = index => {
     setSelectedImageIndex(index);
@@ -97,6 +116,9 @@ const LessonPost = () => {
 
   return (
     <>
+      {/* <PopOver selectionRef={popOverTextParagraphRef}>
+        <button onClick={() => console.log("pressed.")}> </button>
+      </PopOver> */}
       <div className="card">
         <div className="thumbnail">
           <img
@@ -105,14 +127,18 @@ const LessonPost = () => {
             class="lesson-image"
           />
         </div>
+        <HighlightToolbar ref={popOverTextParagraphRef} wordSearchRef={wordSearchRef} lessonNoteRef={lessonNoteRef} />
         <ControlHolder>
           <SpeechControl />
           <TextSizeControl handleTextSizeChanged={handleTextSizeChanged} />
         </ControlHolder>
-        <div className="body">
+        <div className="body" ref={popOverTextParagraphRef}>
           <PostHeading textSize={textSize}>
             <h1>Introduction</h1>
           </PostHeading>
+          <PostSubline textSize={textSize}>
+            <h2>Discovery of DNA Double Helix: Watson and Crick</h2>
+          </PostSubline>
           <PostBody textSize={textSize}>
             <ContentIntroduction>
               The DNA double helix model was relatively simple and has

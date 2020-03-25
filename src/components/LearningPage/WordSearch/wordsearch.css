@@ -4,14 +4,14 @@
   background-color: #ffffff;
   border-radius: 10px;
   padding-bottom: 15px;
-  margin: 20px 0;
   padding: 10px;
+  margin: auto;
+  margin-bottom: 2em;
 }
 
 .wordsearch-content-wrapper {
   display: flex;
   flex-direction: column;
-  
 }
 
 .wordsearch-content-wrapper h2 {
@@ -24,10 +24,15 @@
   border-radius: 3px;
 }
 
-.word-info{
+.word-info {
   margin: 10px 10px 0;
 }
 
-.light{
-  color: rgb(0, 0, 0, 0.7)
+.light {
+  color: rgb(0, 0, 0, 0.7);
+}
+
+.wordsearch-content-wrapper .empty-placeholder {
+  margin: 25px;
+  color: rgba(0, 0, 0, 0.4);
 }

@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [headerActive, setHeaderActive] = useState(false);
   const handleScroll = () => {
-    console.log("Here");
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
 
@@ -16,7 +15,6 @@ const Header = () => {
     }
   };
 
-  useEffect(() => {}, [headerActive]);
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
   }, []);

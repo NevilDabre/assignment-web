@@ -1,10 +1,10 @@
 import React from "react";
 import Lesson from "../Lesson/Lesson";
 
-const LearningPage = ({ handleTextSizeChanged, textSize }) => {
+const LearningPage = ({ handleTextSizeChanged, textSize, wordSearchRef }) => {
   return (
     <>
-        <Lesson textSize={textSize} />
+      <Lesson textSize={textSize} wordSearchRef={wordSearchRef} />
     </>
   );
 };

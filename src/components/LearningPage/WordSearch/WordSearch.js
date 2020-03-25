@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, forwardRef, useImperativeHandle } from "react";
 import axios from "axios";
 import SearchInput from "./SearchInput/SearchInput";
 import "./wordsearch.css";
 
-const WordSearch = () => {
+const WordSearch = forwardRef((props, ref) => {
   const [word, setWord] = useState();
   const [wordType, setWordType] = useState();
   const [result, setResult] = useState();
@@ -12,15 +12,24 @@ const WordSearch = () => {
     setWord(event.target.value);
   };
 
-  const handleSearchDictionary = () => {
-    if (word) {
+  useImperativeHandle(ref, () => ({ handleSearchDictionary }));
+
+  const handleSearchDictionary = entity => {
+    let searchText;
+    if (typeof entity === "string") {
+      searchText = entity;
+      setWord(entity);
+    } else {
+      searchText = word;
+    }
+
+    if (searchText) {
       axios({
         method: "GET",
-        url: "https://api.dictionaryapi.dev/api/v1/entries/en/" + word
+        url: "https://api.dictionaryapi.dev/api/v1/entries/en/hello"
       })
         .then(response => {
           if (response && response.data && response.data.length > 0) {
-            console.log(response);
             const {
               meaning: { noun, exclamation, adjective }
             } = response.data[0];
@@ -59,8 +68,14 @@ const WordSearch = () => {
       <p className="word-info light">
         {result && result.example && `"` + result.example + '"'}
       </p>
+
+      {!wordType && (
+        <p className="empty-placeholder">
+          Type a word and press search button to find a word meaning.
+        </p>
+      )}
     </div>
   );
-};
+});
 
 export default WordSearch;

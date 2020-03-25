@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PopOver from "react-text-selection-popover";
 import { useSpeechSynthesis } from "react-speech-kit";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faStop } from "@fortawesome/free-solid-svg-icons";
