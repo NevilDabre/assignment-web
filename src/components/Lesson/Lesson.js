@@ -1,15 +1,14 @@
-import React, { useState, createRef, useEffect } from "react";
+import React, { useState, createRef} from "react";
 import FlipCard from "./FlipCard/FlipCard";
 import Accordion from "./Accordion/Accordion";
 import styled from "styled-components";
-import VideoFrame from "./VideoFrame/VideoFrame";
+import VideoFrame from "../CommonElement/VideoFrame/VideoFrame";
 import ImageCarousel from "./ImageCarousel/ImageCarousel";
 import HighlightToolbar from "./HighlightToolbar/HighlightToolbar";
 import "./lesson.css";
 
-import SpeechControl from "../SpeechControl/SpeechControl";
-import TextSizeControl from "../TextSizeControl/TextSizeControl";
-import PopOver from "react-text-selection-popover";
+import SpeechControl from "./SpeechControl/SpeechControl";
+import TextSizeControl from "./TextSizeControl/TextSizeControl";
 
 const ControlHolder = styled.div`
   display: flex;
@@ -18,7 +17,6 @@ const ControlHolder = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 2em;
-  font-family: "Martel Sans", sans-serif;
 `;
 
 const PostHeading = styled.div`
@@ -26,7 +24,6 @@ const PostHeading = styled.div`
   margin: 2em;
   h1 {
     font-size: ${props => {
-      console.log(props);
       return `${3 + props.textSize}em`;
     }};
     text-align: left;
@@ -43,7 +40,6 @@ const PostSubline = styled.div`
   color: rgba(0, 0, 0, 0.4);
   h2 {
     font-size: ${props => {
-      console.log(props);
       return `${1.5 + props.textSize}em`;
     }};
     text-align: left;
@@ -98,6 +94,7 @@ const ContentBody = styled.div`
 const LessonPost = ({ wordSearchRef, lessonNoteRef }) => {
   const [textSize, setTextSize] = useState(0);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [bannerImageSrc] = useState("https://signage.uiowa.edu/sites/signage.uiowa.edu/files/slides/biology_slide2.jpg");
   const popOverTextParagraphRef = createRef();
 
   const handleAccordionChange = index => {
@@ -116,23 +113,24 @@ const LessonPost = ({ wordSearchRef, lessonNoteRef }) => {
 
   return (
     <>
-      {/* <PopOver selectionRef={popOverTextParagraphRef}>
-        <button onClick={() => console.log("pressed.")}> </button>
-      </PopOver> */}
       <div className="card">
         <div className="thumbnail">
           <img
-            src="https://signage.uiowa.edu/sites/signage.uiowa.edu/files/slides/biology_slide2.jpg"
-            alt="biology"
-            class="lesson-image"
+            src={bannerImageSrc}
+            alt="biology dna representation"
+            className="lesson-image"
           />
+            <div className="lesson-image-left">
+            <img className="image" src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Biology section icon. Credit- unsplash.com" />
+            <span>Grade 12 Biology</span>
+            </div>
         </div>
         <HighlightToolbar ref={popOverTextParagraphRef} wordSearchRef={wordSearchRef} lessonNoteRef={lessonNoteRef} />
         <ControlHolder>
           <SpeechControl />
           <TextSizeControl handleTextSizeChanged={handleTextSizeChanged} />
         </ControlHolder>
-        <div className="body" ref={popOverTextParagraphRef}>
+        <div className="body" ref={popOverTextParagraphRef} role="article">
           <PostHeading textSize={textSize}>
             <h1>Introduction</h1>
           </PostHeading>
@@ -219,6 +217,7 @@ const LessonPost = ({ wordSearchRef, lessonNoteRef }) => {
                   biomolecules, it would be a very difficult task to work on the
                   biochemistry of cellular reactions.
                 </p>
+                <br />
                 <p>
                   Determining the DNA structure paved the way for these kinds of
                   studies. It opened up the door to the world of microbiology,
@@ -230,7 +229,7 @@ const LessonPost = ({ wordSearchRef, lessonNoteRef }) => {
             <PostSubHeading>
               <h2>Extra resources</h2>
             </PostSubHeading>
-            <VideoFrame youtubeId="4gFF1-VHHmk" />
+            <VideoFrame youtubeId="4gFF1-VHHmk" ariaLabel="DNA educational video content"  title="DNA educational video" />
           </PostBody>
         </div>
       </div>

@@ -16,8 +16,6 @@ const reducer = (state, { type, payload }) => {
         nextId += lessonNotes[lessonNotes.length - 1].id;
       }
       payload.id = nextId;
-      console.log(payload);
-      console.log([...state.lessonNotes, payload]);
       return { ...state, lessonNotes: [...state.lessonNotes, payload] };
     }
     case LN_EDIT_NOTE: {

@@ -26,7 +26,7 @@ const WordSearch = forwardRef((props, ref) => {
     if (searchText) {
       axios({
         method: "GET",
-        url: "https://api.dictionaryapi.dev/api/v1/entries/en/hello"
+        url: "https://api.dictionaryapi.dev/api/v1/entries/en/"+searchText
       })
         .then(response => {
           if (response && response.data && response.data.length > 0) {

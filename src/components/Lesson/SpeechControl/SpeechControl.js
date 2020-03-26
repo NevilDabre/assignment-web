@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import PopOver from "react-text-selection-popover";
 import { useSpeechSynthesis } from "react-speech-kit";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlay, faStop } from "@fortawesome/free-solid-svg-icons";
+import PropTypes from 'prop-types';
+import IconButton from "../../CommonElement/IconButton/IconButton"
 
 const text = `Introduction
 The DNA double helix model was relatively simple and has revolutionized the study of biology and genetics. In order for the double helix model to explain the known facts about DNA, the model's chemical structure had to be able to explain three activities: 
@@ -23,30 +22,29 @@ const SpeechControlHolder = styled.div`
   flex: 1;
 `;
 
-const FontAwesomeIconElement = styled(FontAwesomeIcon)`
-  &:hover {
-    transform: scale(1.5);
-  }
-  transition: all 0.2s ease-in-out;
-`;
-
-const SpeechControl = ({ textContenet }) => {
+const SpeechControl = ({ textContent }) => {
   const { speak, cancel, speaking } = useSpeechSynthesis();
 
   return (
     <SpeechControlHolder>
       <h3>Listen:</h3>
       <div>
-        <FontAwesomeIconElement
-          icon={faPlay}
-          onClick={() => speak({ text: textContenet || text })}
-        />
+      {!speaking && 
+      <IconButton handleOnClick={() => speak({ text: textContent || text })} iconName="faPlay" title="Play button for text to speech" srText="Play button for text to speech" />
+      }
+      {speaking && 
+      <IconButton handleOnClick={cancel} iconName="faPause" title="Pause button for text to speech" srText="Pause button for text to speech" />
+      }
       </div>
       <div>
-        <FontAwesomeIconElement icon={faStop} onClick={cancel} />
+      <IconButton handleOnClick={cancel} iconName="faStop" title="Stop button for text to speech" srText="Stop button for text to speech" />
       </div>
     </SpeechControlHolder>
   );
 };
 
 export default SpeechControl;
+
+SpeechControl.propTypes = {
+  handleTextSizeChanged: PropTypes.string
+}

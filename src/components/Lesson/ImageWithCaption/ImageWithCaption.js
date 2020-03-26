@@ -25,7 +25,7 @@ const ImageWithCaption = () => {
     <div>
       <FigureElement>
         <ImageElement
-          alt="Watson and Crick DNA Model"
+          alt="Watson and Crick DNA Model - credit - bbci.co.uk"
           style={{ borderRadius: "25px" }}
           src="https://ichef.bbci.co.uk/images/ic/448xn/p071f6xk.jpg"
           width="100%"

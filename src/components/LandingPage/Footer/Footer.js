@@ -21,13 +21,25 @@ const FontAwesomeIconElement = styled(FontAwesomeIcon)`
 const Footer = () => {
   return (
     <>
-      <footer>
+      <footer role="contentinfo" id="footer">
         <span>&copy; 2020 All rights are reserved.</span>
         <div className="social-media-holder">
-          <FontAwesomeIconElement icon={faFacebook} />
-          <FontAwesomeIconElement icon={faTwitter} />
-          <FontAwesomeIconElement icon={faLinkedin} />
-          <FontAwesomeIconElement icon={faYoutube} />
+          <a href="#">
+            <FontAwesomeIconElement icon={faFacebook} title="Facebook" />
+            <span className="sr-only">Facebook</span>
+          </a>
+          <a href="#">
+            <FontAwesomeIconElement icon={faTwitter} title="Twitter" />
+            <span className="sr-only">Twitter</span>
+          </a>
+          <a href="#">
+            <FontAwesomeIconElement icon={faLinkedin} title="Linkedin" />
+            <span className="sr-only">Linkedin</span>
+          </a>
+          <a href="#">
+            <FontAwesomeIconElement icon={faYoutube} title="Youtube " />
+            <span className="sr-only">Youtube</span>
+          </a>
         </div>
       </footer>
     </>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -8,6 +8,8 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import styled from "styled-components";
 import "./contactcard.css";
+import ContactMessageModal from "./ContactMessageModal/ContactMessageModal";
+import MainButtonElement from "../../CommonElement/BrandButton/BrandButton.css";
 
 const FontAwesomeIconElement = styled(FontAwesomeIcon)`
   &:hover {
@@ -19,25 +21,56 @@ const FontAwesomeIconElement = styled(FontAwesomeIcon)`
 `;
 
 const ContactCard = () => {
+  const [showModal, setShowModal] = useState(false);
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const handleOpenModal = () => {
+    setShowModal(true);
+  };
+
   return (
     <div className="contact-card">
+      <ContactMessageModal
+        showModal={showModal}
+        closeModal={handleCloseModal}
+      />
       <img
         src="https://images.unsplash.com/photo-1506919258185-6078bba55d2a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2015&q=80"
         className="contact-image"
-        alt="Professor James"
+        alt="Professor James. Credit- unsplash.com"
       />
       <p className="title">Written by</p>
       <h2> James Brown</h2>
       <p className="title">Science Department</p>
       <p className="school-name">St. John High School</p>
       <div className="social-media-holder">
-        <FontAwesomeIconElement icon={faFacebook} />
-        <FontAwesomeIconElement icon={faTwitter} />
-        <FontAwesomeIconElement icon={faLinkedin} />
-        <FontAwesomeIconElement icon={faYoutube} />
+        <a href="#">
+          <FontAwesomeIconElement icon={faFacebook} title="Facebook link" />
+          <span className="sr-only">Facebook link</span>
+        </a>
+        <a href="#">
+          <FontAwesomeIconElement icon={faTwitter} title="Twitter link" />
+          <span className="sr-only">Twitter link</span>
+        </a>
+        <a href="#">
+          <FontAwesomeIconElement icon={faLinkedin} title="Linkedin link" />
+          <span className="sr-only">Linkedin link</span>
+        </a>
+        <a href="#">
+          <FontAwesomeIconElement icon={faYoutube} title="Youtube link" />
+          <span className="sr-only">Youtube link</span>
+        </a>
       </div>
       <div>
-        <button className="contact-button">Contact</button>
+        <MainButtonElement
+          style={{ padding: "8px" }}
+          className="contact-button-updated"
+          onClick={handleOpenModal}
+        >
+          Contact
+        </MainButtonElement>
       </div>
     </div>
   );
