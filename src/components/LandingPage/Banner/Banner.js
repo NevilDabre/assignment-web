@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./banner.css";
-import styled from "styled-components";
 import ModalHolder from "../../CommonElement/ModalHolder/ModalHolder";
 import VideoFrame from "../../CommonElement/VideoFrame/VideoFrame";
 import MainButtonElement from "../../CommonElement/BrandButton/BrandButton.css";
@@ -15,10 +14,10 @@ const Banner = () => {
     setShowModal(true);
   };
   return (
-    <section className="banner-area" role="banner" id="content">
+    <section className="banner-area" role="main" id="content">
       <div className="banner-img" />
       <h1>E-Learning Platform</h1>
-      <h3>A complete and innovative solution </h3>
+      <h2>A complete and innovative solution </h2>
       <MainButtonElement href="#" onClick={handleShowModal}>
         Watch Video
       </MainButtonElement>

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
 import ModalHolder from "../../../CommonElement/ModalHolder/ModalHolder";
 import BrandButton from "../../../CommonElement/BrandButton/BrandButton.css";
 
@@ -46,7 +44,7 @@ const ContactMessageModal = ({ showModal, closeModal }) => {
         </div>
         <div className="modal-footer">
           <BrandButton onClick={handleSendMessage} className="button-updated">
-            Save
+            Send
           </BrandButton>
         </div>
       </div>

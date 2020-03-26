@@ -25,20 +25,20 @@ const Footer = () => {
         <span>&copy; 2020 All rights are reserved.</span>
         <div className="social-media-holder">
           <a href="#">
-            <FontAwesomeIconElement icon={faFacebook} title="Facebook link" />
-            <span className="sr-only">Facebook link</span>
+            <FontAwesomeIconElement icon={faFacebook} title="Facebook" />
+            <span className="sr-only">Facebook</span>
           </a>
           <a href="#">
-            <FontAwesomeIconElement icon={faTwitter} title="Twitter link" />
-            <span className="sr-only">Twitter link</span>
+            <FontAwesomeIconElement icon={faTwitter} title="Twitter" />
+            <span className="sr-only">Twitter</span>
           </a>
           <a href="#">
-            <FontAwesomeIconElement icon={faLinkedin} title="Linkedin link" />
-            <span className="sr-only">Linkedin link</span>
+            <FontAwesomeIconElement icon={faLinkedin} title="Linkedin" />
+            <span className="sr-only">Linkedin</span>
           </a>
           <a href="#">
-            <FontAwesomeIconElement icon={faYoutube} title="Youtube link" />
-            <span className="sr-only">Youtube link</span>
+            <FontAwesomeIconElement icon={faYoutube} title="Youtube " />
+            <span className="sr-only">Youtube</span>
           </a>
         </div>
       </footer>

@@ -1,4 +1,4 @@
-import React, { useState, createRef, useEffect } from "react";
+import React, { useState, createRef} from "react";
 import FlipCard from "./FlipCard/FlipCard";
 import Accordion from "./Accordion/Accordion";
 import styled from "styled-components";
@@ -7,9 +7,8 @@ import ImageCarousel from "./ImageCarousel/ImageCarousel";
 import HighlightToolbar from "./HighlightToolbar/HighlightToolbar";
 import "./lesson.css";
 
-import SpeechControl from "../SpeechControl/SpeechControl";
-import TextSizeControl from "../TextSizeControl/TextSizeControl";
-import PopOver from "react-text-selection-popover";
+import SpeechControl from "./SpeechControl/SpeechControl";
+import TextSizeControl from "./TextSizeControl/TextSizeControl";
 
 const ControlHolder = styled.div`
   display: flex;
@@ -95,7 +94,7 @@ const ContentBody = styled.div`
 const LessonPost = ({ wordSearchRef, lessonNoteRef }) => {
   const [textSize, setTextSize] = useState(0);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const [bannerImageSrc, setBannerImageSrc] = useState("https://signage.uiowa.edu/sites/signage.uiowa.edu/files/slides/biology_slide2.jpg");
+  const [bannerImageSrc] = useState("https://signage.uiowa.edu/sites/signage.uiowa.edu/files/slides/biology_slide2.jpg");
   const popOverTextParagraphRef = createRef();
 
   const handleAccordionChange = index => {
@@ -121,7 +120,10 @@ const LessonPost = ({ wordSearchRef, lessonNoteRef }) => {
             alt="biology dna representation"
             className="lesson-image"
           />
-            <div className="lesson-image-left">Grade 12 Biology</div>
+            <div className="lesson-image-left">
+            <img className="image" src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Biology section icon. Credit- unsplash.com" />
+            <span>Grade 12 Biology</span>
+            </div>
         </div>
         <HighlightToolbar ref={popOverTextParagraphRef} wordSearchRef={wordSearchRef} lessonNoteRef={lessonNoteRef} />
         <ControlHolder>

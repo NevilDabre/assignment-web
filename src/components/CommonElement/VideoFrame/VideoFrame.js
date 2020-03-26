@@ -13,7 +13,7 @@ const VideoFrame = ({ youtubeId, ariaLabel, title }) => {
   }, []);
 
   return (
-    <div className="video-holder">
+    <div className="video-holder" role="complementary">
       <iframe
         className="video"
         title={title}

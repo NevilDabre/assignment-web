@@ -1,4 +1,4 @@
-import React, { useState, useEffect, forwardRef } from "react";
+import React, { useEffect, forwardRef } from "react";
 import PopOver from "react-text-selection-popover";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -30,8 +30,7 @@ const HighlightToolbar = forwardRef(
 
     const handleLessonNote = () => {
       const selectedText = handleTextSelected();
-
-      lessonNoteRef.current.checkHandle(selectedText);
+      lessonNoteRef.current.handleCreateNote(selectedText);
     };
 
     const handleStartSpeech = () => {
@@ -78,7 +77,7 @@ const HighlightToolbar = forwardRef(
                   handleStartSpeech();
                 }}
                 icon={faPlay}
-                title="Start speech button"
+                title="Start speech"
               />
               <span className="sr-only">Start speech buttonn</span>
             </button>
@@ -96,7 +95,7 @@ const HighlightToolbar = forwardRef(
               <FontAwesomeIconElement
                 onClick={cancel}
                 icon={faStop}
-                title="Stop speech button"
+                title="Stop speech"
               />
               <span className="sr-only">Stop speech button</span>
             </button>
@@ -114,7 +113,7 @@ const HighlightToolbar = forwardRef(
             <FontAwesomeIconElement
               icon={faSearch}
               onClick={handleWordSearch}
-              title="Search word in dictionary button"
+              title="Search word in dictionary"
             />
             <span className="sr-only">Search word in dictionary button</span>
           </button>
@@ -131,7 +130,7 @@ const HighlightToolbar = forwardRef(
             <FontAwesomeIconElement
               icon={faPencilAlt}
               onClick={handleLessonNote}
-              title="Create Lesson note button"
+              title="Create Lesson note"
             />
             <span className="sr-only">Create Lesson note button</span>
           </button>

@@ -29,7 +29,22 @@
   bottom: 8px;
   left: 16px;
   font-size: 2em;
-    color: rgba(255,255,255,0.84);
-    line-height: 48px;
-    font-weight: 400;
+  color: rgba(255,255,255,0.84);
+  line-height: 48px;
+  font-weight: 400;
+  display:flex;
+  justify-content: center;
+}
+
+.lesson-image-left .image{
+  border-radius:50%;
+  height:48px;
+  width:48px;
+  margin-right: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.lesson-image-left  span{
+  text-shadow: 2px 2px #000;
 }

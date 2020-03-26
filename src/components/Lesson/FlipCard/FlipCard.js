@@ -9,22 +9,19 @@ const CardImage = styled.div`
   height: inherit;
   border-radius: 10px;
   img {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  object-fit: cover;
-}
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
 
-.card_title {
-  text-align: center;
-  font-size: 30px;
-  margin-top: -80px;
-  height: 40px;
-  color: #fff;
-}
-
-
-
+  .card_title {
+    text-align: center;
+    font-size: 30px;
+    margin-top: -80px;
+    height: 40px;
+    color: #fff;
+  }
 `;
 
 export const CardHolder = styled.div`
@@ -33,15 +30,15 @@ export const CardHolder = styled.div`
   border-radius: 10px;
   margin: 15px;
 
-    .hidden-content{
+  .hidden-content {
     height: 1px;
     margin: -1px;
-    overflow:hidden;
-    padding:0;
+    overflow: hidden;
+    padding: 0;
     position: absolute;
     width: 1px;
     border: 0;
-    clip: rect(0 0 0 0)
+    clip: rect(0 0 0 0);
   }
 `;
 
@@ -87,7 +84,6 @@ export const BackSide = styled.div`
   }
 `;
 
-
 const FlipCard = ({ data }) => {
   const elements =
     data &&
@@ -99,17 +95,25 @@ const FlipCard = ({ data }) => {
           ? ImageNumber2
           : ImageNumber3;
       return (
-        <CardHolder>
+        <CardHolder key={item._id}>
           <CardElement>
             <FrontSide id={item._id} background={imagePath}>
               <CardImage>
-    <img src="https://cdn.pixabay.com/photo/2016/12/13/05/28/dna-1903319__340.jpg" aria-details={`dna-activity-${item._id}`} alt=""/> 
-      <div className="card_title">
-    <p>{item._id}</p>
-  </div></CardImage>
-  <p className="hidden-content" id={`dna-activity-${item._id}`}>
-  {item.description}
-  </p>
+                <img
+                  src="https://cdn.pixabay.com/photo/2016/12/13/05/28/dna-1903319__340.jpg"
+                  aria-details={`dna-activity-${item._id}`}
+                  alt="DNA Activity. credit - pixabay.com"
+                />
+                <div className="card_title">
+                  <p>{item._id}</p>
+                </div>
+              </CardImage>
+              <details
+                className="hidden-content"
+                id={`dna-activity-${item._id}`}
+              >
+                {item.description}
+              </details>
             </FrontSide>
             <BackSide>
               <p>{item.description}</p>

@@ -1,7 +1,5 @@
 import React, { useState, useEffect, forwardRef, useImperativeHandle } from "react";
-import styled from "styled-components";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
 import { LN_CREATE_NOTE, LN_EDIT_NOTE } from "../Context/LessonNoteContextType";
 import ModalHolder from "../../../CommonElement/ModalHolder/ModalHolder";
 import BrandButton from '../../../CommonElement/BrandButton/BrandButton.css'

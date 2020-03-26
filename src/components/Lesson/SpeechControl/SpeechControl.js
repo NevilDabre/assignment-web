@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import PopOver from "react-text-selection-popover";
 import { useSpeechSynthesis } from "react-speech-kit";
-import IconButton from "../CommonElement/IconButton/IconButton"
+import PropTypes from 'prop-types';
+import IconButton from "../../CommonElement/IconButton/IconButton"
 
 const text = `Introduction
 The DNA double helix model was relatively simple and has revolutionized the study of biology and genetics. In order for the double helix model to explain the known facts about DNA, the model's chemical structure had to be able to explain three activities: 
@@ -22,7 +22,7 @@ const SpeechControlHolder = styled.div`
   flex: 1;
 `;
 
-const SpeechControl = ({ textContenet }) => {
+const SpeechControl = ({ textContent }) => {
   const { speak, cancel, speaking } = useSpeechSynthesis();
 
   return (
@@ -30,7 +30,7 @@ const SpeechControl = ({ textContenet }) => {
       <h3>Listen:</h3>
       <div>
       {!speaking && 
-      <IconButton handleOnClick={() => speak({ text: textContenet || text })} iconName="faPlay" title="Play button for text to speech" srText="Play button for text to speech" />
+      <IconButton handleOnClick={() => speak({ text: textContent || text })} iconName="faPlay" title="Play button for text to speech" srText="Play button for text to speech" />
       }
       {speaking && 
       <IconButton handleOnClick={cancel} iconName="faPause" title="Pause button for text to speech" srText="Pause button for text to speech" />
@@ -44,3 +44,7 @@ const SpeechControl = ({ textContenet }) => {
 };
 
 export default SpeechControl;
+
+SpeechControl.propTypes = {
+  handleTextSizeChanged: PropTypes.string
+}

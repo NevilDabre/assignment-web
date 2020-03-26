@@ -22,13 +22,13 @@ const SearchInput = ({ handleSearchDictionary, handleChange }) => {
     <PaperElement style={{ borderRadius: 40 }}>
       <InputBaseElement
         placeholder="Search your word"
-        inputProps={{ "aria-label": "search google maps" }}
+        inputProps={{ "aria-label": "search dictionary" }}
         onChange={handleChange}
       />
-      <IconButton onClick={handleSearchDictionary} aria-label="search">
+      <IconButton onClick={handleSearchDictionary} aria-label="search icon">
         <FontAwesomeIcon
           icon={faSearch}
-          title="Search word in dictionary button"
+          title="Search word in dictionary"
         />
         <span className="sr-only">Search word in dictionary button</span>
       </IconButton>

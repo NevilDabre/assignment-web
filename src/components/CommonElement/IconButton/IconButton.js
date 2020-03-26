@@ -12,7 +12,6 @@ import {
   faTrashAlt,
   faPause
 } from "@fortawesome/free-solid-svg-icons";
-import _ from "lodash";
 
 import styled from "styled-components";
 

@@ -35,28 +35,34 @@ const Header = () => {
     };
   }, []);
   return (
-    <header className={headerActive ? "active" : ""} role="navigation" aria-label="Main" id="header">
+    <div
+      className={headerActive ? "active navigation-holder" : "navigation-holder"}
+      role="navigation"
+      id="header"
+    >
       <h2>
         <Link to="/">
           <FontAwesomeIconElement
             aria-hidden="true"
-            title="learning website icon"
+            title="logo"
             icon={faGraduationCap}
           />
           <span className="sr-only">Website Logo</span> D2L
         </Link>
       </h2>
       <nav>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/learningpage" className="banner-btn-link">
-            Start Learning
-          </Link>
-        </li>
+        <ul className="nav-list">
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/learningpage" className="banner-btn-link">
+              Start Learning
+            </Link>
+          </li>
+        </ul>
       </nav>
-    </header>
+    </div>
   );
 };
 

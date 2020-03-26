@@ -39,7 +39,7 @@ const ContactCard = () => {
       <img
         src="https://images.unsplash.com/photo-1506919258185-6078bba55d2a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2015&q=80"
         className="contact-image"
-        alt="Professor James"
+        alt="Professor James. Credit- unsplash.com"
       />
       <p className="title">Written by</p>
       <h2> James Brown</h2>

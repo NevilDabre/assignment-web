@@ -23,6 +23,7 @@ const Accordion = ({ data, handleAccordionChange }) => {
     data.map(item => {
       return (
         <ExpansionPanel
+          key={item._id}
           expanded={expanded === item._id}
           onClick={() => {
             handleChange(item._id);
@@ -30,8 +31,8 @@ const Accordion = ({ data, handleAccordionChange }) => {
           }}
         >
           <ExpansionPanelSummary
-            aria-controls="panel1a-content"
-            id="panel1a-header"
+            aria-controls={`panel1a-content${item._id}`}
+            id={`panel1a-header${item._id}`}
             expandIcon={<ExpandMoreIcon />}
           >
             <PanelHeading>{item.name}</PanelHeading>

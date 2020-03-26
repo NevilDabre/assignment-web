@@ -44,13 +44,6 @@ const LessonNoteCard = forwardRef((props, ref) => {
   const { lessonNotes, dispatch } = useContext(CreateLessonNoteContext);
   const [editLessonNote, setEditLessonNote] = useState();
   const [showModal, setShowModal] = useState(false);
-  const lessonNoteRef = createRef(ref);
-
-  useImperativeHandle(ref, () => ({ checkHandle }));
-
-  const checkHandle = text => {
-    console.log(text);
-  };
 
   const handleCreateEditModal = lessonNote => {
     if (lessonNote) {
@@ -75,7 +68,7 @@ const LessonNoteCard = forwardRef((props, ref) => {
     <div className="lessonnote-card lessonnote-content-wrapper">
       <TextControlHolder>
         <h2>Lesson Note</h2>
-        <IconButton handleOnClick={handleCreateEditModal} iconName="faPencilAlt" title="Create lesson note button" srText="Create lesson note button" />
+        <IconButton handleOnClick={handleCreateEditModal} iconName="faPencilAlt" title="Create lesson note" srText="Create lesson note" />
       </TextControlHolder>
 
       <ul>
@@ -88,8 +81,8 @@ const LessonNoteCard = forwardRef((props, ref) => {
                   {index + 1}. {lessonNote.title}
                 </span>
                 <div>
-                <IconButton handleOnClick={() => handleDeleteClick(lessonNote.id)} iconName="faEdit" title="Edit lesson note button" srText="Edit lesson note button" />
-                <IconButton handleOnClick={() => handleCreateEditModal(lessonNote)} iconName="faTrashAlt" title="Delete lesson note button" srText="Delete lesson note button" />
+                <IconButton handleOnClick={() => handleDeleteClick(lessonNote.id)} iconName="faEdit" title="Edit lesson note" srText="Edit lesson note" />
+                <IconButton handleOnClick={() => handleCreateEditModal(lessonNote)} iconName="faTrashAlt" title="Delete lesson note" srText="Delete lesson note" />
                 </div>
               </li>
             );
