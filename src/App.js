@@ -1,8 +1,8 @@
-import React from "react";
-import LandingPage from "./components/LandingPage/LandingPage";
-import LearningPageLayout from "./components/LearningPage/LearningPageLayout";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./styles.css"
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import LandingPage from './components/LandingPage/LandingPage';
+import LearningPageLayout from './components/LearningPage/LearningPageLayout';
+import './styles.css';
 
 export default function App() {
   return (

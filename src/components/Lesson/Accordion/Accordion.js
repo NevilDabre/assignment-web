@@ -1,9 +1,9 @@
-import React from "react";
-import ExpansionPanel from "@material-ui/core/ExpansionPanel";
-import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
-import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import styled from "styled-components";
+import React from 'react';
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import styled from 'styled-components';
 
 const PanelHeading = styled.span`
   font-weight: 500;
@@ -14,13 +14,13 @@ const PanelHeading = styled.span`
 const Accordion = ({ data, handleAccordionChange }) => {
   const [expanded, setExpanded] = React.useState(false);
 
-  const handleChange = panel => {
+  const handleChange = (panel) => {
     setExpanded(expanded === panel ? false : panel);
   };
 
   const elements =
     data &&
-    data.map(item => {
+    data.map((item) => {
       return (
         <ExpansionPanel
           key={item._id}

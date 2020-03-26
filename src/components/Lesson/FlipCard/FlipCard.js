@@ -1,8 +1,8 @@
-import React from "react";
-import ImageNumber1 from "./number_1.png";
-import ImageNumber2 from "./number_2.png";
-import ImageNumber3 from "./number_3.png";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import ImageNumber1 from './number_1.png';
+import ImageNumber2 from './number_2.png';
+import ImageNumber3 from './number_3.png';
 
 const CardImage = styled.div`
   width: inherit;
@@ -61,7 +61,7 @@ export const FrontSide = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: ${props => `url(${props.background})`};
+  background-image: ${(props) => `url(${props.background})`};
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
@@ -87,7 +87,7 @@ export const BackSide = styled.div`
 const FlipCard = ({ data }) => {
   const elements =
     data &&
-    data.map(item => {
+    data.map((item) => {
       const imagePath =
         item._id === 1
           ? ImageNumber1
@@ -100,7 +100,7 @@ const FlipCard = ({ data }) => {
             <FrontSide id={item._id} background={imagePath}>
               <CardImage>
                 <img
-                  src="https://cdn.pixabay.com/photo/2016/12/13/05/28/dna-1903319__340.jpg"
+                  src="/images/dna_model.jpg"
                   aria-details={`dna-activity-${item._id}`}
                   alt="DNA Activity. credit - pixabay.com"
                 />

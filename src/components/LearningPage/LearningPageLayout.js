@@ -1,11 +1,11 @@
-import React, { createRef } from "react";
-import "./LearningPageLayout.css";
-import Header from "../LandingPage/Header/Header";
-import LearningPage from "./LearningPage";
-import WordSearch from "./WordSearch/WordSearch";
-import Footer from "../LandingPage/Footer/Footer";
-import ContactCard from "../Lesson/ContactCard/ContactCard";
-import LessonNoteHolder from "../LearningPage/LessonNoteHolder/LessonNoteHolder";
+import React, { createRef } from 'react';
+import './LearningPageLayout.css';
+import Header from '../LandingPage/Header/Header';
+import LearningPage from './LearningPage';
+import WordSearch from './WordSearch/WordSearch';
+import Footer from '../LandingPage/Footer/Footer';
+import ContactCard from '../Lesson/ContactCard/ContactCard';
+import LessonNoteHolder from './LessonNoteHolder/LessonNoteHolder';
 
 const LearningPageLayout = () => {
   const wordSearchRef = createRef();

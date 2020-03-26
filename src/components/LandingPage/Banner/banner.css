@@ -34,7 +34,7 @@ section p {
 }
 .banner-area .banner-img {
   background: #000;
-  background-image: url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2626&q=80");
+  background-image: url("/images/banner.jpeg");
   position: absolute;
   top: 0;
   left: 0;

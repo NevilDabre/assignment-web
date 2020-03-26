@@ -1,11 +1,11 @@
-import React, { useReducer } from "react";
-import { CreateLessonNoteContext } from "./LessonNoteContext";
+import React, { useReducer } from 'react';
+import { CreateLessonNoteContext } from './LessonNoteContext';
 
 import {
   LN_CREATE_NOTE,
   LN_EDIT_NOTE,
-  LN_DELETE_NOTE
-} from "./LessonNoteContextType";
+  LN_DELETE_NOTE,
+} from './LessonNoteContextType';
 
 const reducer = (state, { type, payload }) => {
   switch (type) {
@@ -19,7 +19,7 @@ const reducer = (state, { type, payload }) => {
       return { ...state, lessonNotes: [...state.lessonNotes, payload] };
     }
     case LN_EDIT_NOTE: {
-      let modifiedLessonNotes = state.lessonNotes.map(lessonNote => {
+      let modifiedLessonNotes = state.lessonNotes.map((lessonNote) => {
         if (payload.id === lessonNote.id) {
           return payload;
         }
@@ -29,7 +29,7 @@ const reducer = (state, { type, payload }) => {
     }
     case LN_DELETE_NOTE: {
       let filteredLessonNotes = state.lessonNotes.filter(
-        ({ id }) => id !== payload
+        ({ id }) => id !== payload,
       );
       return { ...state.lessonNotes, lessonNotes: filteredLessonNotes };
     }
@@ -39,7 +39,7 @@ const reducer = (state, { type, payload }) => {
 };
 
 const initialState = {
-  lessonNotes: []
+  lessonNotes: [],
 };
 
 const LessonNoteContextProvider = ({ children }) => {

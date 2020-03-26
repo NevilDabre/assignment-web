@@ -1,14 +1,14 @@
-import React, { useState, createRef} from "react";
-import FlipCard from "./FlipCard/FlipCard";
-import Accordion from "./Accordion/Accordion";
-import styled from "styled-components";
-import VideoFrame from "../CommonElement/VideoFrame/VideoFrame";
-import ImageCarousel from "./ImageCarousel/ImageCarousel";
-import HighlightToolbar from "./HighlightToolbar/HighlightToolbar";
-import "./lesson.css";
+import React, { useState, createRef } from 'react';
+import styled from 'styled-components';
+import FlipCard from './FlipCard/FlipCard';
+import Accordion from './Accordion/Accordion';
+import VideoFrame from '../CommonElement/VideoFrame/VideoFrame';
+import ImageCarousel from './ImageCarousel/ImageCarousel';
+import HighlightToolbar from './HighlightToolbar/HighlightToolbar';
+import './lesson.css';
 
-import SpeechControl from "./SpeechControl/SpeechControl";
-import TextSizeControl from "./TextSizeControl/TextSizeControl";
+import SpeechControl from './SpeechControl/SpeechControl';
+import TextSizeControl from './TextSizeControl/TextSizeControl';
 
 const ControlHolder = styled.div`
   display: flex;
@@ -23,7 +23,7 @@ const PostHeading = styled.div`
   width: 100%;
   margin: 2em;
   h1 {
-    font-size: ${props => {
+    font-size: ${(props) => {
       return `${3 + props.textSize}em`;
     }};
     text-align: left;
@@ -39,7 +39,7 @@ const PostSubline = styled.div`
   margin: 2em;
   color: rgba(0, 0, 0, 0.4);
   h2 {
-    font-size: ${props => {
+    font-size: ${(props) => {
       return `${1.5 + props.textSize}em`;
     }};
     text-align: left;
@@ -55,12 +55,12 @@ const PostSubHeading = styled.div`
   h2 {
     font-variant: small-caps;
     font-weight: 400;
-    font-size: ${props => `${1.5 + props.textSize}em`};
+    font-size: ${(props) => `${1.5 + props.textSize}em`};
   }
 `;
 
 const PostBody = styled.div`
-  font-size: ${props => `${1.2 + props.textSize}em`};
+  font-size: ${(props) => `${1.2 + props.textSize}em`};
   margin-top: 0.5em;
 `;
 
@@ -94,17 +94,19 @@ const ContentBody = styled.div`
 const LessonPost = ({ wordSearchRef, lessonNoteRef }) => {
   const [textSize, setTextSize] = useState(0);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const [bannerImageSrc] = useState("https://signage.uiowa.edu/sites/signage.uiowa.edu/files/slides/biology_slide2.jpg");
+  const [bannerImageSrc] = useState(
+    '/images/biology_banner.jpg',
+  );
   const popOverTextParagraphRef = createRef();
 
-  const handleAccordionChange = index => {
+  const handleAccordionChange = (index) => {
     setSelectedImageIndex(index);
   };
 
-  const handleTextSizeChanged = type => {
-    if (type === "decrease") {
+  const handleTextSizeChanged = (type) => {
+    if (type === 'decrease') {
       setTextSize(textSize - 0.2);
-    } else if (type === "increase") {
+    } else if (type === 'increase') {
       setTextSize(textSize + 0.2);
     } else {
       setTextSize(0);
@@ -120,12 +122,20 @@ const LessonPost = ({ wordSearchRef, lessonNoteRef }) => {
             alt="biology dna representation"
             className="lesson-image"
           />
-            <div className="lesson-image-left">
-            <img className="image" src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Biology section icon. Credit- unsplash.com" />
+          <div className="lesson-image-left">
+            <img
+              className="image"
+              src="/images/biology_icon.jpeg"
+              alt="Biology section icon. Credit- unsplash.com"
+            />
             <span>Grade 12 Biology</span>
-            </div>
+          </div>
         </div>
-        <HighlightToolbar ref={popOverTextParagraphRef} wordSearchRef={wordSearchRef} lessonNoteRef={lessonNoteRef} />
+        <HighlightToolbar
+          ref={popOverTextParagraphRef}
+          wordSearchRef={wordSearchRef}
+          lessonNoteRef={lessonNoteRef}
+        />
         <ControlHolder>
           <SpeechControl />
           <TextSizeControl handleTextSizeChanged={handleTextSizeChanged} />
@@ -153,18 +163,18 @@ const LessonPost = ({ wordSearchRef, lessonNoteRef }) => {
                 data={[
                   {
                     _id: 1,
-                    description: "replicate itself,"
+                    description: 'replicate itself,',
                   },
                   {
                     _id: 2,
                     description:
-                      "send instructions to the cell to enable it to manufacture proteins, and"
+                      'send instructions to the cell to enable it to manufacture proteins, and',
                   },
                   {
                     _id: 3,
                     description:
-                      "change in a controlled manner in order for a species to survive in a changing environment (evolve)."
-                  }
+                      'change in a controlled manner in order for a species to survive in a changing environment (evolve).',
+                  },
                 ]}
               />
             </ContentFlipCardHolder>
@@ -183,22 +193,22 @@ const LessonPost = ({ wordSearchRef, lessonNoteRef }) => {
                   data={[
                     {
                       _id: 1,
-                      name: "Replication",
+                      name: 'Replication',
                       description:
-                        "Replication of the DNA was relatively easy to demonstrate with the double helix."
+                        'Replication of the DNA was relatively easy to demonstrate with the double helix.',
                     },
                     {
                       _id: 2,
-                      name: "Proteins",
+                      name: 'Proteins',
                       description:
-                        "They knew that proteins were the molecules that carried out the information required to properly construct the proteins, and that RNA copied and carried this genetic information to the sight of protein synthesis. This is the central dogma of life."
+                        'They knew that proteins were the molecules that carried out the information required to properly construct the proteins, and that RNA copied and carried this genetic information to the sight of protein synthesis. This is the central dogma of life.',
                     },
                     {
                       _id: 3,
-                      name: "Mutations",
+                      name: 'Mutations',
                       description:
-                        "The role of mutations and how these mutations are incorporated into the DNA molecule and how these then affect the evolution, or slow change of the population of organisms over time, was the last function to be breached."
-                    }
+                        'The role of mutations and how these mutations are incorporated into the DNA molecule and how these then affect the evolution, or slow change of the population of organisms over time, was the last function to be breached.',
+                    },
                   ]}
                 />
               </div>
@@ -229,7 +239,11 @@ const LessonPost = ({ wordSearchRef, lessonNoteRef }) => {
             <PostSubHeading>
               <h2>Extra resources</h2>
             </PostSubHeading>
-            <VideoFrame youtubeId="4gFF1-VHHmk" ariaLabel="DNA educational video content"  title="DNA educational video" />
+            <VideoFrame
+              youtubeId="4gFF1-VHHmk"
+              ariaLabel="DNA educational video content"
+              title="DNA educational video"
+            />
           </PostBody>
         </div>
       </div>

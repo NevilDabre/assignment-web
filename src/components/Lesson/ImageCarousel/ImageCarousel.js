@@ -1,6 +1,6 @@
-import React from "react";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import React from 'react';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const ImageCarousel = ({ selectedImageIndex }) => {
   return (
@@ -12,9 +12,9 @@ const ImageCarousel = ({ selectedImageIndex }) => {
       >
         <div>
           <img
-            style={{ width: "100%", height: "100%" }}
+            style={{ width: '100%', height: '100%' }}
             alt="Watson and Crick DNA Model - credit - bbci.co.uk"
-            src="https://ichef.bbci.co.uk/images/ic/448xn/p071f6xk.jpg"
+            src="/images/watson.jpg"
           />
           <p className="legend">
             Watson and Crick DNA Model. Image Credit: BBC UK
@@ -34,9 +34,7 @@ const ImageCarousel = ({ selectedImageIndex }) => {
             alt="DNA function proteins - credit - pixabay.com"
             src="https://cdn.pixabay.com/photo/2013/07/18/10/59/dna-163710__340.jpg"
           />
-          <p className="legend">
-            DNA function proteins. Image Credit: Pixabay
-          </p>
+          <p className="legend">DNA function proteins. Image Credit: Pixabay</p>
         </div>
         <div>
           <img

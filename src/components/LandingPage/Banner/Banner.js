@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import "./banner.css";
-import ModalHolder from "../../CommonElement/ModalHolder/ModalHolder";
-import VideoFrame from "../../CommonElement/VideoFrame/VideoFrame";
-import MainButtonElement from "../../CommonElement/BrandButton/BrandButton.css";
+import React, { useState } from 'react';
+import './banner.css';
+import ModalHolder from '../../CommonElement/ModalHolder/ModalHolder';
+import VideoFrame from '../../CommonElement/VideoFrame/VideoFrame';
+import MainButtonElement from '../../CommonElement/BrandButton/BrandButton.css';
 
 const Banner = () => {
   const [showModal, setShowModal] = useState(false);
   const handleCloseModal = () => {
     setShowModal(false);
   };
-  const handleShowModal = event => {
+  const handleShowModal = (event) => {
     event.preventDefault();
     setShowModal(true);
   };

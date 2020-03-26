@@ -1,13 +1,13 @@
-import React, { useState, useImperativeHandle, forwardRef } from "react";
-import LessonNoteContextProvider from "./Context/LessonNoteContextProvider";
-import { LN_DELETE_NOTE } from "./Context/LessonNoteContextType";
-import { CreateLessonNoteContext } from "./Context/LessonNoteContext";
-import IconButton from "../../CommonElement/IconButton/IconButton";
+import React, { useState, useImperativeHandle, forwardRef } from 'react';
+import styled from 'styled-components';
+import LessonNoteContextProvider from './Context/LessonNoteContextProvider';
+import { LN_DELETE_NOTE } from './Context/LessonNoteContextType';
+import { CreateLessonNoteContext } from './Context/LessonNoteContext';
+import IconButton from '../../CommonElement/IconButton/IconButton';
 
-import "./lessonnotecard.css";
-import LessonModal from "./NoteModal/NoteModal";
+import './lessonnotecard.css';
+import LessonModal from './NoteModal/NoteModal';
 
-import styled from "styled-components";
 
 const TextControlHolder = styled.div`
   display: flex;
@@ -22,12 +22,12 @@ const LessonNoteHolder = forwardRef((props, ref) => {
 
   useImperativeHandle(ref, () => ({ handleCreateNote }));
 
-  const handleCreateNote = title => {
+  const handleCreateNote = (title) => {
     setEditLessonNote({ title });
     setShowModal(true);
   };
 
-  const handleCreateEditModal = lessonNote => {
+  const handleCreateEditModal = (lessonNote) => {
     if (lessonNote) {
       setEditLessonNote(lessonNote);
     } else {
@@ -49,7 +49,7 @@ const LessonNoteHolder = forwardRef((props, ref) => {
     <>
       <LessonNoteContextProvider>
         <CreateLessonNoteContext.Consumer>
-          {context => {
+          {(context) => {
             const { lessonNotes, dispatch } = context;
             return (
               <div className="lessonnote-card lessonnote-content-wrapper">
