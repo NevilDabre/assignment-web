@@ -74,7 +74,6 @@ const ContentFlipCardHolder = styled.div`
   justify-content: center;
 
   @media (min-width: 320px) and (max-width: 480px) {
-    background-color: royalblue;
     justify-content: center;
   }
 `;
