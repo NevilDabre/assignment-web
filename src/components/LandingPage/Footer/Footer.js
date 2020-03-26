@@ -1,13 +1,13 @@
-import React from "react";
-import "./footer.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
+import './footer.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebook,
   faTwitter,
   faLinkedin,
-  faYoutube
-} from "@fortawesome/free-brands-svg-icons";
-import styled from "styled-components";
+  faYoutube,
+} from '@fortawesome/free-brands-svg-icons';
+import styled from 'styled-components';
 
 const FontAwesomeIconElement = styled(FontAwesomeIcon)`
   &:hover {

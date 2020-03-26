@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import "./header.css";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
-import styled from "styled-components";
+import React, { useEffect, useState } from 'react';
+import './header.css';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import styled from 'styled-components';
 
 const FontAwesomeIconElement = styled(FontAwesomeIcon)`
   &:hover {
@@ -26,17 +26,19 @@ const Header = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
   }, []);
 
   useEffect(() => {
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
   return (
     <div
-      className={headerActive ? "active navigation-holder" : "navigation-holder"}
+      className={
+        headerActive ? 'active navigation-holder' : 'navigation-holder'
+      }
       role="navigation"
       id="header"
     >

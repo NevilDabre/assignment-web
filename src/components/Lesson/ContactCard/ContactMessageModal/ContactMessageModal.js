@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import TextField from "@material-ui/core/TextField";
-import ModalHolder from "../../../CommonElement/ModalHolder/ModalHolder";
-import BrandButton from "../../../CommonElement/BrandButton/BrandButton.css";
+import React, { useState } from 'react';
+import TextField from '@material-ui/core/TextField';
+import ModalHolder from '../../../CommonElement/ModalHolder/ModalHolder';
+import BrandButton from '../../../CommonElement/BrandButton/BrandButton.css';
 
 const ContactMessageModal = ({ showModal, closeModal }) => {
   const [message, setMessage] = useState();
 
-  const handleFieldChange = event => {
+  const handleFieldChange = (event) => {
     setMessage(event.target.value);
   };
 
-  const handleSendMessage = title => {
+  const handleSendMessage = (title) => {
     // Clear values
     setMessage();
     closeModal();

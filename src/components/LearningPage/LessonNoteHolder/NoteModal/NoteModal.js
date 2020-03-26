@@ -1,8 +1,13 @@
-import React, { useState, useEffect, forwardRef, useImperativeHandle } from "react";
-import TextField from "@material-ui/core/TextField";
-import { LN_CREATE_NOTE, LN_EDIT_NOTE } from "../Context/LessonNoteContextType";
-import ModalHolder from "../../../CommonElement/ModalHolder/ModalHolder";
-import BrandButton from '../../../CommonElement/BrandButton/BrandButton.css'
+import React, {
+  useState,
+  useEffect,
+  forwardRef,
+  useImperativeHandle,
+} from 'react';
+import TextField from '@material-ui/core/TextField';
+import { LN_CREATE_NOTE, LN_EDIT_NOTE } from '../Context/LessonNoteContextType';
+import ModalHolder from '../../../CommonElement/ModalHolder/ModalHolder';
+import BrandButton from '../../../CommonElement/BrandButton/BrandButton.css';
 
 const NoteModal = forwardRef(
   ({ closeModal, showModal, lessonNote, dispatch }, ref) => {
@@ -18,32 +23,32 @@ const NoteModal = forwardRef(
 
     useImperativeHandle(ref, () => ({ handleCreateEditNote }));
 
-    const handleFieldChange = event => {
+    const handleFieldChange = (event) => {
       const {
-        target: { name, value }
+        target: { name, value },
       } = event;
-      if (name === "title") {
+      if (name === 'title') {
         setCurrentNoteTitle(value);
-      } else if (name === "description") setCurrentNoteDescription(value);
+      } else if (name === 'description') setCurrentNoteDescription(value);
     };
 
-    const handleCreateEditNote = title => {
+    const handleCreateEditNote = (title) => {
       if (lessonNote && lessonNote.id) {
         dispatch({
           type: LN_EDIT_NOTE,
           payload: {
             id: lessonNote.id,
             title: currentNoteTitle,
-            description: currentNoteDescription
-          }
+            description: currentNoteDescription,
+          },
         });
       } else {
         dispatch({
           type: LN_CREATE_NOTE,
           payload: {
             title: currentNoteTitle,
-            description: currentNoteDescription
-          }
+            description: currentNoteDescription,
+          },
         });
       }
 
@@ -63,7 +68,7 @@ const NoteModal = forwardRef(
             <span onClick={closeModal} className="close">
               &times;
             </span>
-            <h2>{`${lessonNote && lessonNote.id ? "Edit " : "Add "}`} Note</h2>
+            <h2>{`${lessonNote && lessonNote.id ? 'Edit ' : 'Add '}`} Note</h2>
           </div>
           <div className="modal-body">
             <TextField
@@ -90,14 +95,17 @@ const NoteModal = forwardRef(
             />
           </div>
           <div className="modal-footer">
-          <BrandButton onClick={handleCreateEditNote} className="button-updated"> 
+            <BrandButton
+              onClick={handleCreateEditNote}
+              className="button-updated"
+            >
               Save
             </BrandButton>
           </div>
         </div>
       </ModalHolder>
     );
-  }
+  },
 );
 
 export default NoteModal;

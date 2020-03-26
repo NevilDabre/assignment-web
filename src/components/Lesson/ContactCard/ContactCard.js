@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebook,
   faTwitter,
   faLinkedin,
-  faYoutube
-} from "@fortawesome/free-brands-svg-icons";
-import styled from "styled-components";
-import "./contactcard.css";
-import ContactMessageModal from "./ContactMessageModal/ContactMessageModal";
-import MainButtonElement from "../../CommonElement/BrandButton/BrandButton.css";
+  faYoutube,
+} from '@fortawesome/free-brands-svg-icons';
+import styled from 'styled-components';
+import './contactcard.css';
+import ContactMessageModal from './ContactMessageModal/ContactMessageModal';
+import MainButtonElement from '../../CommonElement/BrandButton/BrandButton.css';
 
 const FontAwesomeIconElement = styled(FontAwesomeIcon)`
   &:hover {
@@ -37,7 +37,7 @@ const ContactCard = () => {
         closeModal={handleCloseModal}
       />
       <img
-        src="https://images.unsplash.com/photo-1506919258185-6078bba55d2a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2015&q=80"
+        src="/images/professor.jpeg"
         className="contact-image"
         alt="Professor James. Credit- unsplash.com"
       />
@@ -65,7 +65,7 @@ const ContactCard = () => {
       </div>
       <div>
         <MainButtonElement
-          style={{ padding: "8px" }}
+          style={{ padding: '8px' }}
           className="contact-button-updated"
           onClick={handleOpenModal}
         >

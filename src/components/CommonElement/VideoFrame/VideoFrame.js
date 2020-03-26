@@ -1,19 +1,38 @@
-import React, { useEffect, useState } from "react";
-import "./VideoFrame.css";
+import React, { useEffect, useState, createRef } from 'react';
+import './VideoFrame.css';
 
 const VideoFrame = ({ youtubeId, ariaLabel, title }) => {
   const [videoSrc, setVideoSrc] = useState(
-    `https://www.youtube.com/embed/${youtubeId}`
+    `https://www.youtube.com/embed/${youtubeId}`,
   );
+  const newRef = createRef();
 
-  useEffect(() => {}, [youtubeId]);
+  useEffect(() => {}, [youtubeId, videoSrc]);
 
   useEffect(() => {
-    return setVideoSrc();
+    return function cleanup() {
+      setVideoSrc();
+    };
   }, []);
 
+  // useEffect(() => {
+  //   //Youtube video pause
+  //   return function cleanup() {
+  //     const wn = React.findDOMNode(newRef).contentWindow;
+  //     wn.postMessage(
+  //       '{"event":"command","func":"' + 'pauseVideo' + '","args":""}',
+  //       '*',
+  //     );
+  //   };
+  // }, [videoSrc]);
+
   return (
-    <div className="video-holder" role="complementary">
+    <div
+      id="video-holder"
+      className="video-holder"
+      role="complementary"
+      ref={newRef}
+    >
       <iframe
         className="video"
         title={title}

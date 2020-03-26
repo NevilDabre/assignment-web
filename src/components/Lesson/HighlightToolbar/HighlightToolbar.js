@@ -1,15 +1,15 @@
-import React, { useEffect, forwardRef } from "react";
-import PopOver from "react-text-selection-popover";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useEffect, forwardRef } from 'react';
+import PopOver from 'react-text-selection-popover';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPlay,
   faStop,
   faPencilAlt,
-  faSearch
-} from "@fortawesome/free-solid-svg-icons";
-import styled from "styled-components";
-import { useSpeechSynthesis } from "react-speech-kit";
-import "./highlighttoolbar.css";
+  faSearch,
+} from '@fortawesome/free-solid-svg-icons';
+import styled from 'styled-components';
+import { useSpeechSynthesis } from 'react-speech-kit';
+import './highlighttoolbar.css';
 
 const FontAwesomeIconElement = styled(FontAwesomeIcon)`
   &:hover {
@@ -50,12 +50,12 @@ const HighlightToolbar = forwardRef(
     };
 
     useEffect(() => {
-      window.addEventListener("mouseup", handleTextSelected);
+      window.addEventListener('mouseup', handleTextSelected);
     }, []);
 
     useEffect(() => {
       return () => {
-        window.removeEventListener("mouseup", handleTextSelected);
+        window.removeEventListener('mouseup', handleTextSelected);
       };
     }, []);
 
@@ -65,11 +65,11 @@ const HighlightToolbar = forwardRef(
           {!speaking && (
             <button
               style={{
-                background: "none",
+                background: 'none',
                 fontSize: 18,
-                fontWeight: "bold",
-                border: "none",
-                color: "#fff"
+                fontWeight: 'bold',
+                border: 'none',
+                color: '#fff',
               }}
             >
               <FontAwesomeIconElement
@@ -85,11 +85,11 @@ const HighlightToolbar = forwardRef(
           {speaking && (
             <button
               style={{
-                background: "none",
+                background: 'none',
                 fontSize: 18,
-                fontWeight: "bold",
-                border: "none",
-                color: "#fff"
+                fontWeight: 'bold',
+                border: 'none',
+                color: '#fff',
               }}
             >
               <FontAwesomeIconElement
@@ -103,11 +103,11 @@ const HighlightToolbar = forwardRef(
 
           <button
             style={{
-              background: "none",
+              background: 'none',
               fontSize: 18,
-              fontWeight: "bold",
-              border: "none",
-              color: "#fff"
+              fontWeight: 'bold',
+              border: 'none',
+              color: '#fff',
             }}
           >
             <FontAwesomeIconElement
@@ -120,11 +120,11 @@ const HighlightToolbar = forwardRef(
 
           <button
             style={{
-              background: "none",
+              background: 'none',
               fontSize: 18,
-              fontWeight: "bold",
-              border: "none",
-              color: "#fff"
+              fontWeight: 'bold',
+              border: 'none',
+              color: '#fff',
             }}
           >
             <FontAwesomeIconElement
@@ -137,7 +137,7 @@ const HighlightToolbar = forwardRef(
         </span>
       </PopOver>
     );
-  }
+  },
 );
 
 export default HighlightToolbar;

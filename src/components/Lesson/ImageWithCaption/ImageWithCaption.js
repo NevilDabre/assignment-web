@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const FigureElement = styled.figure`
   border: thin #c0c0c0 solid;
@@ -15,7 +15,7 @@ const ImageElement = styled.img`
 `;
 
 const FigcaptionElement = styled.figcaption`
-  font: "italic smaller sans-serif";
+  font: 'italic smaller sans-serif';
   padding: 3px;
   text-align: center;
 `;
@@ -26,7 +26,7 @@ const ImageWithCaption = () => {
       <FigureElement>
         <ImageElement
           alt="Watson and Crick DNA Model - credit - bbci.co.uk"
-          style={{ borderRadius: "25px" }}
+          style={{ borderRadius: '25px' }}
           src="https://ichef.bbci.co.uk/images/ic/448xn/p071f6xk.jpg"
           width="100%"
           height="100%"

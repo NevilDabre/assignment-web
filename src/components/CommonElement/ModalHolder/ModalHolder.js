@@ -1,10 +1,10 @@
-import React from "react";
-import "./modalholder.css";
-import styled from "styled-components";
+import React from 'react';
+import './modalholder.css';
+import styled from 'styled-components';
 
 const ModalWrapper = styled.div`
-  display: ${props =>
-    props.showModal ? "block" : "none"}; /* Hidden by default */
+  display: ${(props) =>
+    props.showModal ? 'block' : 'none'}; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   padding-top: 100px; /* Location of the box */
