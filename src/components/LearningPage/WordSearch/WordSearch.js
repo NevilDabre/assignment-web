@@ -34,7 +34,17 @@ const WordSearch = forwardRef((props, ref) => {
         .then((response) => {
           if (response && response.data && response.data.length > 0) {
             const {
-              meaning: { noun, exclamation, adjective, suffix, abbreviation },
+              meaning: {
+                noun,
+                exclamation,
+                adjective,
+                suffix,
+                abbreviation,
+                verb,
+                preposition,
+                adverb,
+                'cardinal number': cardinalNumber,
+              },
             } = response.data[0];
 
             if (noun && noun.length > 0) {
@@ -52,14 +62,25 @@ const WordSearch = forwardRef((props, ref) => {
             } else if (abbreviation && abbreviation.length > 0) {
               setWordType('abbreviation');
               setResult(abbreviation[0]);
+            } else if (verb && verb.length > 0) {
+              setWordType('verb');
+              setResult(verb[0]);
+            } else if (preposition && preposition.length > 0) {
+              setWordType('preposition');
+              setResult(preposition[0]);
+            } else if (adverb && adverb.length > 0) {
+              setWordType('adverb');
+              setResult(adverb[0]);
+            } else if (cardinalNumber && cardinalNumber.length > 0) {
+              setWordType('cardinal_number');
+              setResult(cardinalNumber[0]);
             }
           }
         })
         .catch((error) => {
           setWordType();
           setResult();
-          setPlaceHolder('Sorry, unable to find provided word\'s meaning.');
-
+          setPlaceHolder("Sorry, unable to find provided word's meaning.");
         });
     }
   };
