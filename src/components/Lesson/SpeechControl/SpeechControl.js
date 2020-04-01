@@ -20,6 +20,19 @@ const SpeechControlHolder = styled.div`
   justify-content: space-evenly;
   align-items: center;
   flex: 1;
+  width: 40%;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    justify-content: flex-start;
+    margin-left: 2em;
+    margin-top: 5px;
+    & > * {
+      margin-left: 10px;
+    }
+    & > *:first-child {
+      margin-left: 0;
+    }
+  }
 `;
 
 const SpeechControl = ({ textContent }) => {
@@ -27,7 +40,9 @@ const SpeechControl = ({ textContent }) => {
 
   return (
     <SpeechControlHolder>
-      <h3>Listen:</h3>
+      <small>
+        <h3>Listen:</h3>
+      </small>
       <div>
         {!speaking && (
           <IconButton

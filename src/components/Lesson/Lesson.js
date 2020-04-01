@@ -6,9 +6,11 @@ import VideoFrame from '../CommonElement/VideoFrame/VideoFrame';
 import ImageCarousel from './ImageCarousel/ImageCarousel';
 import HighlightToolbar from './HighlightToolbar/HighlightToolbar';
 import './lesson.css';
+import IconButton from '../CommonElement/IconButton/IconButton';
 
 import SpeechControl from './SpeechControl/SpeechControl';
 import TextSizeControl from './TextSizeControl/TextSizeControl';
+import BookmarkControl from './BookmarkControl/BookmarkControl';
 
 const ControlHolder = styled.div`
   display: flex;
@@ -17,6 +19,10 @@ const ControlHolder = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 2em;
+  flex-wrap: wrap;
+  @media (min-width: 320px) and (max-width: 480px) {
+    justify-content: center;
+  }
 `;
 
 const PostHeading = styled.div`
@@ -92,14 +98,17 @@ const ContentBody = styled.div`
 
 const LessonPost = ({ wordSearchRef, lessonNoteRef }) => {
   const [textSize, setTextSize] = useState(0);
+  const [isBookmarked, setIsBookmarked] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const [bannerImageSrc] = useState(
-    '/images/biology_banner.jpg',
-  );
+  const [bannerImageSrc] = useState('/images/biology_banner.jpg');
   const popOverTextParagraphRef = createRef();
 
   const handleAccordionChange = (index) => {
     setSelectedImageIndex(index);
+  };
+
+  const handleBookmarkChanged = () => {
+    setIsBookmarked(!isBookmarked);
   };
 
   const handleTextSizeChanged = (type) => {
@@ -138,6 +147,10 @@ const LessonPost = ({ wordSearchRef, lessonNoteRef }) => {
         <ControlHolder>
           <SpeechControl />
           <TextSizeControl handleTextSizeChanged={handleTextSizeChanged} />
+          <BookmarkControl
+            handleBookmarkChanged={handleBookmarkChanged}
+            isBookmarked={isBookmarked}
+          />
         </ControlHolder>
         <div className="body" ref={popOverTextParagraphRef} role="article">
           <PostHeading textSize={textSize}>

@@ -7,13 +7,27 @@ const TextControlHolder = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  flex: 1;
+  width: 40%;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    justify-content: flex-start;
+    margin-left: 2em;
+    margin-top: 5px;
+    & > * {
+      margin-left: 10px;
+    }
+    & > *:first-child {
+      margin-left: 0;
+    }
+  }
 `;
 
 const TextSizeControl = ({ handleTextSizeChanged }) => {
   return (
     <TextControlHolder>
-      <h3>Text size:</h3>
+      <small>
+        <h3>Text size:</h3>
+      </small>
       <IconButton
         handleOnClick={() => handleTextSizeChanged('decrease')}
         iconName="faMinusCircle"

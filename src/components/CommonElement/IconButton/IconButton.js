@@ -11,14 +11,16 @@ import {
   faEdit,
   faTrashAlt,
   faPause,
+  faBookmark,
 } from '@fortawesome/free-solid-svg-icons';
+import { faBookmark as faBookmarkRegular } from '@fortawesome/free-regular-svg-icons';
 
 import styled from 'styled-components';
 
 const ButtonElement = styled.button`
   font-size: inherit;
   border: #fff;
-  /* color: ${(props) => (props.color ? props.color : '#000')}; */
+  background-color: #fff;
 `;
 
 const FontAwesomeIconElement = styled(FontAwesomeIcon)`
@@ -39,6 +41,8 @@ const iconsList = {
   faEdit,
   faTrashAlt,
   faPause,
+  faBookmark,
+  faBookmarkRegular,
 };
 
 const IconButton = ({ handleOnClick, iconName, title, srText, color }) => {
