@@ -29,7 +29,9 @@ const PostHeading = styled.div`
   width: 100%;
   margin: 2em;
   h1 {
-    font-size: ${(props) => `${3 + props.textSize}em`}
+    font-size: ${(props) => {
+      return `${3 + props.textSize}em`;
+    }};
     text-align: left;
     line-height: 48px;
     font-weight: 400;

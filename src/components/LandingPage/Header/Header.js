@@ -57,7 +57,7 @@ const Header = ({ toggleDarkTheme }) => {
             icon={faGraduationCap}
           />
           <span className="sr-only">Website Logo</span>
-          D2L
+          LEARN
         </Link>
       </h2>
       <nav>

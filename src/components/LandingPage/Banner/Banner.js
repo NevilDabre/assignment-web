@@ -29,7 +29,7 @@ const Banner = () => {
             </span>
           </div>
           <div className="modal-body">
-            <VideoFrame youtubeId="QMy7Sj6TLxU" name="d2l_video" />
+            <VideoFrame youtubeId="QMy7Sj6TLxU" name="introduction_video" />
           </div>
           <div className="modal-footer"></div>
         </div>
