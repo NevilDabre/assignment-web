@@ -6,11 +6,11 @@ import VideoFrame from '../CommonElement/VideoFrame/VideoFrame';
 import ImageCarousel from './ImageCarousel/ImageCarousel';
 import HighlightToolbar from './HighlightToolbar/HighlightToolbar';
 import './lesson.css';
-import IconButton from '../CommonElement/IconButton/IconButton';
 
 import SpeechControl from './SpeechControl/SpeechControl';
 import TextSizeControl from './TextSizeControl/TextSizeControl';
 import BookmarkControl from './BookmarkControl/BookmarkControl';
+import SecondaryButton from '../CommonElement/SecondaryButton/SecondaryButton.css';
 
 const ControlHolder = styled.div`
   display: flex;
@@ -29,11 +29,8 @@ const PostHeading = styled.div`
   width: 100%;
   margin: 2em;
   h1 {
-    font-size: ${(props) => {
-      return `${3 + props.textSize}em`;
-    }};
+    font-size: ${(props) => `${3 + props.textSize}em`}
     text-align: left;
-    color: rgba(0, 0, 0, 0.84);
     line-height: 48px;
     font-weight: 400;
     word-wrap: wrap;
@@ -43,13 +40,10 @@ const PostHeading = styled.div`
 const PostSubline = styled.div`
   width: 100%;
   margin: 2em;
-  color: rgba(0, 0, 0, 0.4);
+  color: gray;
   h2 {
-    font-size: ${(props) => {
-      return `${1.5 + props.textSize}em`;
-    }};
+    font-size: ${(props) => `${1.5 + props.textSize}em`};
     text-align: left;
-
     font-weight: 200;
     word-wrap: wrap;
   }
@@ -257,6 +251,10 @@ const LessonPost = ({ wordSearchRef, lessonNoteRef }) => {
               title="DNA educational video"
             />
           </PostBody>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <SecondaryButton>Previous Chapter</SecondaryButton>
+            <SecondaryButton>Next Chapter</SecondaryButton>
+          </div>
         </div>
       </div>
     </>

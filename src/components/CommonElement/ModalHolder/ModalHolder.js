@@ -13,8 +13,14 @@ const ModalWrapper = styled.div`
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  background-color: ${(props) =>
+    props.theme.palette.type === 'light'
+      ? props.theme.palette.common.white
+      : props.theme.palette.common.black};
+  color: ${(props) =>
+    props.theme.palette.type === 'light'
+      ? props.theme.palette.common.black
+      : props.theme.palette.common.white};
 `;
 
 const ModalHolder = ({ showModal, children }) => {

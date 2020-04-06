@@ -1,8 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import ImageNumber1 from './number_1.png';
-import ImageNumber2 from './number_2.png';
-import ImageNumber3 from './number_3.png';
 
 const CardImage = styled.div`
   width: inherit;
@@ -62,7 +59,7 @@ export const FrontSide = styled.div`
   justify-content: center;
   align-items: center;
   background-image: ${(props) => `url(${props.background})`};
-  border-radius: 0.5rem;
+  border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
 
@@ -76,8 +73,8 @@ export const BackSide = styled.div`
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
   font-size: 12px;
   p {
     padding: 15px;
@@ -88,16 +85,10 @@ const FlipCard = ({ data }) => {
   const elements =
     data &&
     data.map((item) => {
-      const imagePath =
-        item._id === 1
-          ? ImageNumber1
-          : item._id === 2
-          ? ImageNumber2
-          : ImageNumber3;
       return (
         <CardHolder key={item._id}>
           <CardElement>
-            <FrontSide id={item._id} background={imagePath}>
+            <FrontSide id={item._id}>
               <CardImage>
                 <img
                   src="/images/dna_model.jpg"

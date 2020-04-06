@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './header.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import { faGraduationCap, faSun } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 
 const FontAwesomeIconElement = styled(FontAwesomeIcon)`
@@ -12,7 +12,14 @@ const FontAwesomeIconElement = styled(FontAwesomeIcon)`
   transition: all 0.2s ease-in-out;
 `;
 
-const Header = () => {
+const BannerButtonLink = styled(Link)`
+color: ${(props) =>
+    props.theme.palette.type === 'light'
+      ? props.theme.palette.common.white
+      : props.theme.palette.common.black};
+    `;
+
+const Header = ({ toggleDarkTheme }) => {
   const [headerActive, setHeaderActive] = useState(false);
   const handleScroll = () => {
     const winScroll =
@@ -49,7 +56,8 @@ const Header = () => {
             title="logo"
             icon={faGraduationCap}
           />
-          <span className="sr-only">Website Logo</span> D2L
+          <span className="sr-only">Website Logo</span>
+          D2L
         </Link>
       </h2>
       <nav>
@@ -58,9 +66,15 @@ const Header = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/learningpage" className="banner-btn-link">
+            <BannerButtonLink to="/learningpage" className="banner-btn-link">
               Start Learning
-            </Link>
+            </BannerButtonLink>
+          </li>
+          <li>
+            <FontAwesomeIconElement
+              onClick={toggleDarkTheme}
+              icon={faSun}
+            />
           </li>
         </ul>
       </nav>

@@ -6,13 +6,28 @@ import WordSearch from './WordSearch/WordSearch';
 import Footer from '../LandingPage/Footer/Footer';
 import ContactCard from '../Lesson/ContactCard/ContactCard';
 import LessonNoteHolder from './LessonNoteHolder/LessonNoteHolder';
+import styled from 'styled-components';
 
-const LearningPageLayout = () => {
+const MainElement = styled.main`
+  background-color: ${(props) =>
+    props.theme.palette.type === 'light'
+      ? props.theme.palette.common.white
+      : props.theme.palette.common.black};
+  color: ${(props) =>
+    props.theme.palette.type === 'light'
+      ? props.theme.palette.common.black
+      : props.theme.palette.common.white};
+  transition: background-color 1s ease;
+`;
+
+// ${(props) => props.theme.palette.primary.main}
+
+const LearningPageLayout = ({ toggleDarkTheme }) => {
   const wordSearchRef = createRef();
   const lessonNoteRef = createRef();
 
   return (
-    <main className="main-container">
+    <MainElement className="main-container">
       <ul className="skip-links">
         <li>
           <a href="#header">Skip to navigation</a>
@@ -25,7 +40,7 @@ const LearningPageLayout = () => {
         </li>
       </ul>
       <div className="header-panel">
-        <Header />
+        <Header toggleDarkTheme={toggleDarkTheme} />
       </div>
       <div className="flex-container wrapper" id="content">
         <div className="content">
@@ -43,7 +58,7 @@ const LearningPageLayout = () => {
       <div className="footer">
         <Footer />
       </div>
-    </main>
+    </MainElement>
   );
 };
 

@@ -5,7 +5,6 @@ Ref = https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal2
 /* Modal Content */
 .modal-content {
     position: relative;
-    background-color: #fefefe;
     margin: auto;
     padding: 0;
     border: 1px solid #888;
@@ -16,7 +15,6 @@ Ref = https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal2
     animation-name: animatetop;
     animation-duration: 0.4s;
     border-radius: 10px;
-    color: #000;
   }
   
   /* Add Animation */
@@ -39,7 +37,6 @@ Ref = https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal2
   
   .close:hover,
   .close:focus {
-    color: #000;
     text-decoration: none;
     cursor: pointer;
   }

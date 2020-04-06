@@ -4,7 +4,7 @@ import Header from './Header/Header';
 import Banner from './Banner/Banner';
 import Footer from './Footer/Footer';
 
-const LandingPage = () => {
+const LandingPage = ({ toggleDarkTheme }) => {
   return (
     <>
       <ul className="skip-links">
@@ -18,7 +18,7 @@ const LandingPage = () => {
           <a href="#footer">Skip to footer</a>
         </li>
       </ul>
-      <Header />
+      <Header toggleDarkTheme={toggleDarkTheme} />
       <Banner />
       <Footer />
     </>
