@@ -5,12 +5,11 @@ import ModalHolder from '../../CommonElement/ModalHolder/ModalHolder';
 import VideoFrame from '../../CommonElement/VideoFrame/VideoFrame';
 import MainButtonElement from '../../CommonElement/BrandButton/BrandButton.css';
 
-const HeadingContainer = styled.div`
-/* color: ${(props) => {
-  return props.theme.palette.type === 'light'
-    ? props.theme.palette.common.white
-    : props.theme.palette.common.black;
-}}; */
+const ModalHeaderElement = styled.div`
+  color: ${(props) =>
+    props.theme.palette.type === 'light'
+      ? props.theme.palette.common.black
+      : props.theme.palette.common.white};
 `;
 
 const Banner = () => {
@@ -26,16 +25,14 @@ const Banner = () => {
   return (
     <section className="banner-area" role="main" id="content">
       <div className="banner-img" />
-      <HeadingContainer>
-        <h1>E-Learning Platform</h1>
-        <h2>A complete and innovative solution </h2>
-      </HeadingContainer>
+      <h1>E-Learning Platform</h1>
+      <h2>A complete and innovative solution </h2>
       <MainButtonElement href="#" onClick={handleShowModal}>
         Watch Video
       </MainButtonElement>
       <ModalHolder showModal={showModal}>
         <div className="modal-content">
-          <div className="modal-header">
+          <ModalHeaderElement className="modal-header">
             <span
               role="button"
               onKeyUp={handleCloseModal}
@@ -44,7 +41,7 @@ const Banner = () => {
               className="close">
               &times;
             </span>
-          </div>
+          </ModalHeaderElement>
           <div className="modal-body">
             <VideoFrame youtubeId="QMy7Sj6TLxU" name="introduction_video" />
           </div>
