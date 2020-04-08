@@ -18,10 +18,7 @@ const ModalWrapper = styled.div`
     props.theme.palette.type === 'light'
       ? props.theme.palette.common.white
       : props.theme.palette.common.black};
-  color: ${(props) =>
-    props.theme.palette.type === 'light'
-      ? props.theme.palette.common.black
-      : props.theme.palette.common.white};
+  color: ${(props) => props.theme.palette.common.black};
 `;
 
 const ModalHolder = ({ showModal, children }) => {

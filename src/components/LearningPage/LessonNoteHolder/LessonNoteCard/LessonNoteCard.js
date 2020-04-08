@@ -34,6 +34,7 @@ const TextControlHolder = styled.div`
 `;
 
 const FontAwesomeIconElement = styled(FontAwesomeIcon)`
+  cursor: pointer;
   &:hover {
     transform: scale(1.5);
   }

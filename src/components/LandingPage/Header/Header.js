@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import './header.css';
 
 const FontAwesomeIconElement = styled(FontAwesomeIcon)`
+  cursor: pointer;
   &:hover {
     transform: scale(1.5);
   }
@@ -14,18 +15,19 @@ const FontAwesomeIconElement = styled(FontAwesomeIcon)`
 `;
 
 const BannerButtonLink = styled(Link)`
-color: ${(props) => {
+  color: ${(props) => {
     return props.theme.palette.type === 'light'
       ? props.theme.palette.common.white
       : props.theme.palette.common.black;
-  }
-}`;
+  }};
+`;
 
 const Header = ({ toggleDarkTheme }) => {
   const [headerActive, setHeaderActive] = useState(false);
 
   const handleScroll = () => {
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
 
     if (winScroll > 10) {
       setHeaderActive(true);
@@ -49,8 +51,7 @@ const Header = ({ toggleDarkTheme }) => {
         headerActive ? 'navigation-holder active' : 'navigation-holder'
       }
       role="navigation"
-      id="header"
-    >
+      id="header">
       <h2>
         <Link to="/">
           <FontAwesomeIconElement
@@ -73,10 +74,13 @@ const Header = ({ toggleDarkTheme }) => {
             </BannerButtonLink>
           </li>
           <li>
-            <FontAwesomeIconElement
-              onClick={toggleDarkTheme}
-              icon={faSun}
-            />
+            <a href="#">
+              <FontAwesomeIconElement
+                onClick={toggleDarkTheme}
+                icon={faSun}
+                title="Toggle Dark / Light Theme"
+              />
+            </a>
           </li>
         </ul>
       </nav>
@@ -85,7 +89,6 @@ const Header = ({ toggleDarkTheme }) => {
 };
 
 export default Header;
-
 
 Header.propTypes = {
   toggleDarkTheme: PropTypes.func.isRequired,

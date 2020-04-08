@@ -12,6 +12,17 @@ import TextSizeControl from './TextSizeControl/TextSizeControl';
 import BookmarkControl from './BookmarkControl/BookmarkControl';
 import SecondaryButton from '../../CommonElement/SecondaryButton/SecondaryButton.css';
 
+const calculateTextSize = (unit, textSize) => {
+  let fontSize = unit + textSize;
+  if (fontSize < 0.49) {
+    fontSize = '0.5em';
+  }
+  if (fontSize > 6.7) {
+    fontSize = '6.7em';
+  }
+  return `${fontSize}em`;
+};
+
 const ControlHolder = styled.div`
   display: flex;
   justify-content: space-around;
@@ -29,9 +40,7 @@ const PostHeading = styled.div`
   width: 100%;
   margin: 2em;
   h1 {
-    font-size: ${(props) => {
-      return `${3 + props.textSize}em`;
-    }};
+    font-size: ${(props) => calculateTextSize(3, props.textSize)};
     text-align: left;
     line-height: 48px;
     font-weight: 400;
@@ -44,7 +53,7 @@ const PostSubline = styled.div`
   margin: 2em;
   color: gray;
   h2 {
-    font-size: ${(props) => `${1.5 + props.textSize}em`};
+    font-size: ${(props) => calculateTextSize(1.5, props.textSize)};
     text-align: left;
     font-weight: 200;
     word-wrap: wrap;
@@ -57,12 +66,12 @@ const PostSubHeading = styled.div`
   h2 {
     font-variant: small-caps;
     font-weight: 400;
-    font-size: ${(props) => `${1.5 + props.textSize}em`};
+    font-size: ${(props) => calculateTextSize(1.5, props.textSize)};
   }
 `;
 
 const PostBody = styled.div`
-  font-size: ${(props) => `${1.2 + props.textSize}em`};
+  font-size: ${(props) => calculateTextSize(1.2, props.textSize)};
   margin-top: 0.5em;
 `;
 
@@ -254,8 +263,8 @@ const LessonPost = ({ wordSearchRef, lessonNoteRef }) => {
             />
           </PostBody>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <SecondaryButton>Previous Chapter</SecondaryButton>
-            <SecondaryButton>Next Chapter</SecondaryButton>
+            <SecondaryButton href="#">Previous Chapter</SecondaryButton>
+            <SecondaryButton href="#">Next Chapter</SecondaryButton>
           </div>
         </div>
       </div>

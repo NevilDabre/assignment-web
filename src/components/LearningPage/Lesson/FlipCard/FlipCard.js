@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import styled from 'styled-components';
 
@@ -74,7 +75,8 @@ export const BackSide = styled.div`
   align-items: center;
   text-transform: uppercase;
   border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
   font-size: 12px;
   p {
     padding: 15px;
@@ -86,31 +88,33 @@ const FlipCard = ({ data }) => {
     data &&
     data.map((item) => {
       return (
-        <CardHolder key={item._id}>
-          <CardElement>
-            <FrontSide id={item._id}>
-              <CardImage>
-                <img
-                  src="/images/dna_model.jpg"
-                  aria-details={`dna-activity-${item._id}`}
-                  alt="DNA Activity. credit - pixabay.com"
-                />
-                <div className="card_title">
-                  <p>{item._id}</p>
-                </div>
-              </CardImage>
-              <details
-                className="hidden-content"
-                id={`dna-activity-${item._id}`}
-              >
-                {item.description}
-              </details>
-            </FrontSide>
-            <BackSide>
-              <p>{item.description}</p>
-            </BackSide>
-          </CardElement>
-        </CardHolder>
+        <a href="#" onClick={(e) => e.preventDefault()}>
+          <CardHolder key={item._id}>
+            <CardElement>
+              <FrontSide id={item._id}>
+                <CardImage>
+                  <img
+                    src="/images/dna_model.jpg"
+                    ariaDetails={`dna-activity-${item._id}`}
+                    alt="DNA Activity. credit - pixabay.com"
+                  />
+                  <div className="card_title">
+                    <p>{item._id}</p>
+                  </div>
+                </CardImage>
+                <details
+                  className="hidden-content"
+                  id={`dna-activity-${item._id}`}>
+                  {item.description}
+                </details>
+              </FrontSide>
+
+              <BackSide>
+                <p>{item.description}</p>
+              </BackSide>
+            </CardElement>
+          </CardHolder>
+        </a>
       );
     });
   return <>{elements}</>;

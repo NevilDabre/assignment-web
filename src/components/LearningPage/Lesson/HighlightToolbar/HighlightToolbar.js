@@ -12,6 +12,7 @@ import { useSpeechSynthesis } from 'react-speech-kit';
 import './highlighttoolbar.css';
 
 const FontAwesomeIconElement = styled(FontAwesomeIcon)`
+  cursor: pointer;
   &:hover {
     transform: scale(1.5);
   }

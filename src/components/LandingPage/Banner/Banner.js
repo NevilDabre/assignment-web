@@ -7,11 +7,10 @@ import MainButtonElement from '../../CommonElement/BrandButton/BrandButton.css';
 
 const HeadingContainer = styled.div`
 /* color: ${(props) => {
-    return props.theme.palette.type === 'light'
-      ? props.theme.palette.common.white
-      : props.theme.palette.common.black;
-  }
-}; */
+  return props.theme.palette.type === 'light'
+    ? props.theme.palette.common.white
+    : props.theme.palette.common.black;
+}}; */
 `;
 
 const Banner = () => {
@@ -37,7 +36,12 @@ const Banner = () => {
       <ModalHolder showModal={showModal}>
         <div className="modal-content">
           <div className="modal-header">
-            <span role="button" onKeyUp={handleCloseModal} tabIndex="0" onClick={handleCloseModal} className="close">
+            <span
+              role="button"
+              onKeyUp={handleCloseModal}
+              tabIndex={0}
+              onClick={handleCloseModal}
+              className="close">
               &times;
             </span>
           </div>

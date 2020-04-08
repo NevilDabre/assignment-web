@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const SecondaryButtonElement = styled.a`
+cursor: pointer;
 padding: 5px 20px;
 background: #ed2553;
 border-radius: 50px;

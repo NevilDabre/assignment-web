@@ -4,10 +4,18 @@ import React, {
   forwardRef,
   useImperativeHandle,
 } from 'react';
+import styled from 'styled-components';
 import TextField from '@material-ui/core/TextField';
 import { LN_CREATE_NOTE, LN_EDIT_NOTE } from '../Context/LessonNoteContextType';
 import ModalHolder from '../../../CommonElement/ModalHolder/ModalHolder';
 import BrandButton from '../../../CommonElement/BrandButton/BrandButton.css';
+
+const ModalHeaderElement = styled.div`
+  color: ${(props) =>
+    props.theme.palette.type === 'light'
+      ? props.theme.palette.common.black
+      : props.theme.palette.common.white};
+`;
 
 const NoteModal = forwardRef(
   ({ closeModal, showModal, lessonNote, dispatch }, ref) => {
@@ -64,12 +72,17 @@ const NoteModal = forwardRef(
     return (
       <ModalHolder showModal={showModal}>
         <div className="modal-content">
-          <div className="modal-header">
-            <span onClick={closeModal} className="close">
+          <ModalHeaderElement className="modal-header">
+            <span
+              role="button"
+              onKeyUp={closeModal}
+              tabIndex={0}
+              onClick={closeModal}
+              className="close">
               &times;
             </span>
             <h2>{`${lessonNote && lessonNote.id ? 'Edit ' : 'Add '}`} Note</h2>
-          </div>
+          </ModalHeaderElement>
           <div className="modal-body">
             <TextField
               id="title"
@@ -97,8 +110,7 @@ const NoteModal = forwardRef(
           <div className="modal-footer">
             <BrandButton
               onClick={handleCreateEditNote}
-              className="button-updated"
-            >
+              className="button-updated">
               Save
             </BrandButton>
           </div>

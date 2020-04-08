@@ -65,6 +65,7 @@ const ContactCard = () => {
       </div>
       <div>
         <MainButtonElement
+          href="#"
           style={{ padding: '8px' }}
           className="contact-button-updated"
           onClick={handleOpenModal}
