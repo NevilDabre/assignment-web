@@ -15,8 +15,6 @@ const WordSearch = forwardRef((props, ref) => {
     setWord(event.target.value);
   };
 
-  useImperativeHandle(ref, () => ({ handleSearchDictionary }));
-
   const handleSearchDictionary = (entity) => {
     let searchText;
     if (typeof entity === 'string') {
@@ -77,13 +75,15 @@ const WordSearch = forwardRef((props, ref) => {
             }
           }
         })
-        .catch((error) => {
+        .catch(() => {
           setWordType();
           setResult();
           setPlaceHolder("Sorry, unable to find provided word's meaning.");
         });
     }
   };
+
+  useImperativeHandle(ref, () => ({ handleSearchDictionary }));
 
   return (
     <div className="wordsearch-card wordsearch-content-wrapper">

@@ -1,6 +1,7 @@
 import React from 'react';
 import './modalholder.css';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const ModalWrapper = styled.div`
   display: ${(props) =>
@@ -28,3 +29,7 @@ const ModalHolder = ({ showModal, children }) => {
 };
 
 export default ModalHolder;
+
+ModalHolder.propTypes = {
+  showModal: PropTypes.bool.isRequired,
+};

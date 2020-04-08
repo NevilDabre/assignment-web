@@ -8,6 +8,7 @@
             - Text size change
             - Dictionary
             - Add Notes
+    - Dark / Light Theme mode
 
 ## Available Scripts
 

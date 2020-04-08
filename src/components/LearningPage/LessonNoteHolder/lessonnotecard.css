@@ -30,3 +30,7 @@
   margin: 25px;
   color: gray;
 }
+
+.note-icons button {
+  margin: 0 5px;
+}

@@ -5,6 +5,7 @@ import IconButton from '@material-ui/core/IconButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const PaperElement = styled(Paper)`
   display: flex;
@@ -34,3 +35,8 @@ const SearchInput = ({ handleSearchDictionary, handleChange }) => {
 };
 
 export default SearchInput;
+
+SearchInput.propTypes = {
+  handleSearchDictionary: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+};

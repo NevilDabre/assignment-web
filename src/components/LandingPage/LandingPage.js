@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './landingpage.css';
 import Header from './Header/Header';
 import Banner from './Banner/Banner';
@@ -26,3 +27,7 @@ const LandingPage = ({ toggleDarkTheme }) => {
 };
 
 export default LandingPage;
+
+LandingPage.propTypes = {
+  toggleDarkTheme: PropTypes.func.isRequired,
+};

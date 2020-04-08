@@ -18,32 +18,32 @@ const FontAwesomeIconElement = styled(FontAwesomeIcon)`
   margin: 0 10px 0 10px;
 `;
 
-const Footer = () => {
-  return (
-    <>
-      <footer role="contentinfo" id="footer">
-        <span>&copy; 2020 All rights are reserved.</span>
-        <div className="social-media-holder">
-          <a href="#">
-            <FontAwesomeIconElement icon={faFacebook} title="Facebook" />
-            <span className="sr-only">Facebook</span>
-          </a>
-          <a href="#">
-            <FontAwesomeIconElement icon={faTwitter} title="Twitter" />
-            <span className="sr-only">Twitter</span>
-          </a>
-          <a href="#">
-            <FontAwesomeIconElement icon={faLinkedin} title="Linkedin" />
-            <span className="sr-only">Linkedin</span>
-          </a>
-          <a href="#">
-            <FontAwesomeIconElement icon={faYoutube} title="Youtube " />
-            <span className="sr-only">Youtube</span>
-          </a>
-        </div>
-      </footer>
-    </>
-  );
-};
+const currentDate = new Date();
+
+const Footer = () => (
+  <>
+    <footer role="contentinfo" id="footer">
+      <span>&copy; {currentDate.getFullYear()} All rights are reserved.</span>
+      <div className="social-media-holder">
+        <a href="#footer">
+          <FontAwesomeIconElement icon={faFacebook} title="Facebook" />
+          <span className="sr-only">Facebook</span>
+        </a>
+        <a href="#footer">
+          <FontAwesomeIconElement icon={faTwitter} title="Twitter" />
+          <span className="sr-only">Twitter</span>
+        </a>
+        <a href="#footer">
+          <FontAwesomeIconElement icon={faLinkedin} title="Linkedin" />
+          <span className="sr-only">Linkedin</span>
+        </a>
+        <a href="#footer">
+          <FontAwesomeIconElement icon={faYoutube} title="Youtube " />
+          <span className="sr-only">Youtube</span>
+        </a>
+      </div>
+    </footer>
+  </>
+);
 
 export default Footer;

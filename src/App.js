@@ -4,16 +4,14 @@ import {
   Route,
   Switch as RouterSwitch,
 } from 'react-router-dom';
-import LandingPage from './components/LandingPage/LandingPage';
-import LearningPageLayout from './components/LearningPage/LearningPageLayout';
-import './styles.css';
 import {
   MuiThemeProvider,
   createMuiTheme,
-  FormControlLabel,
-  Switch,
 } from '@material-ui/core';
 import { ThemeProvider } from 'styled-components';
+import LandingPage from './components/LandingPage/LandingPage';
+import LearningPageLayout from './components/LearningPage/LearningPageLayout';
+import './styles.css';
 
 const themeObject = {
   palette: {

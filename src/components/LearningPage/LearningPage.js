@@ -1,8 +1,7 @@
 import React from 'react';
-import Lesson from '../Lesson/Lesson';
+import Lesson from './Lesson/Lesson';
 
 const LearningPage = ({
-  handleTextSizeChanged,
   textSize,
   wordSearchRef,
   lessonNoteRef,

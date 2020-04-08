@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
+import PropTypes from 'prop-types';
 import ModalHolder from '../../../CommonElement/ModalHolder/ModalHolder';
 import BrandButton from '../../../CommonElement/BrandButton/BrandButton.css';
 
@@ -53,3 +54,8 @@ const ContactMessageModal = ({ showModal, closeModal }) => {
 };
 
 export default ContactMessageModal;
+
+ContactMessageModal.propTypes = {
+  showModal: PropTypes.bool.isRequired,
+  closeModal: PropTypes.func.isRequired,
+};

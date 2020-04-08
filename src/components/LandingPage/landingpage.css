@@ -1,21 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-ul,
-nav {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  cursor: pointer;
-  color: inherit;
-}
-
-a.banner-btn {
+.banner-btn {
   color: #fff;
   padding: 15px 35px;
   background: #ed2553;

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, createRef } from 'react';
 import './VideoFrame.css';
+import PropTypes from "prop-types";
 
 const VideoFrame = ({ youtubeId, ariaLabel, title }) => {
   const [videoSrc, setVideoSrc] = useState(
@@ -7,24 +8,13 @@ const VideoFrame = ({ youtubeId, ariaLabel, title }) => {
   );
   const newRef = createRef();
 
-  useEffect(() => {}, [youtubeId, videoSrc]);
+  useEffect(() => { }, [youtubeId, videoSrc]);
 
   useEffect(() => {
     return function cleanup() {
       setVideoSrc();
     };
   }, []);
-
-  // useEffect(() => {
-  //   //Youtube video pause
-  //   return function cleanup() {
-  //     const wn = React.findDOMNode(newRef).contentWindow;
-  //     wn.postMessage(
-  //       '{"event":"command","func":"' + 'pauseVideo' + '","args":""}',
-  //       '*',
-  //     );
-  //   };
-  // }, [videoSrc]);
 
   return (
     <div
@@ -46,3 +36,9 @@ const VideoFrame = ({ youtubeId, ariaLabel, title }) => {
 };
 
 export default VideoFrame;
+
+VideoFrame.propTypes = {
+  youtubeId: PropTypes.string.isRequired,
+  ariaLabel: PropTypes.string,
+  title: PropTypes.string,
+};

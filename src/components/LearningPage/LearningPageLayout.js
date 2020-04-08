@@ -1,12 +1,13 @@
 import React, { createRef } from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import './LearningPageLayout.css';
 import Header from '../LandingPage/Header/Header';
 import LearningPage from './LearningPage';
 import WordSearch from './WordSearch/WordSearch';
 import Footer from '../LandingPage/Footer/Footer';
-import ContactCard from '../Lesson/ContactCard/ContactCard';
+import ContactCard from './ContactCard/ContactCard';
 import LessonNoteHolder from './LessonNoteHolder/LessonNoteHolder';
-import styled from 'styled-components';
 
 const MainElement = styled.main`
   background-color: ${(props) =>
@@ -19,8 +20,6 @@ const MainElement = styled.main`
       : props.theme.palette.common.white};
   transition: background-color 1s ease;
 `;
-
-// ${(props) => props.theme.palette.primary.main}
 
 const LearningPageLayout = ({ toggleDarkTheme }) => {
   const wordSearchRef = createRef();
@@ -63,3 +62,7 @@ const LearningPageLayout = ({ toggleDarkTheme }) => {
 };
 
 export default LearningPageLayout;
+
+LearningPageLayout.propTypes = {
+  toggleDarkTheme: PropTypes.func.isRequired,
+};

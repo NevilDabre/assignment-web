@@ -72,7 +72,7 @@ const LessonNoteHolder = forwardRef((props, ref) => {
                           <span>
                             {index + 1}. {lessonNote.title}
                           </span>
-                          <div>
+                          <div className="note-icons">
                             <IconButton
                               handleOnClick={() =>
                                 handleCreateEditModal(lessonNote)

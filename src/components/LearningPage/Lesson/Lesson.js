@@ -2,7 +2,7 @@ import React, { useState, createRef } from 'react';
 import styled from 'styled-components';
 import FlipCard from './FlipCard/FlipCard';
 import Accordion from './Accordion/Accordion';
-import VideoFrame from '../CommonElement/VideoFrame/VideoFrame';
+import VideoFrame from '../../CommonElement/VideoFrame/VideoFrame';
 import ImageCarousel from './ImageCarousel/ImageCarousel';
 import HighlightToolbar from './HighlightToolbar/HighlightToolbar';
 import './lesson.css';
@@ -10,7 +10,7 @@ import './lesson.css';
 import SpeechControl from './SpeechControl/SpeechControl';
 import TextSizeControl from './TextSizeControl/TextSizeControl';
 import BookmarkControl from './BookmarkControl/BookmarkControl';
-import SecondaryButton from '../CommonElement/SecondaryButton/SecondaryButton.css';
+import SecondaryButton from '../../CommonElement/SecondaryButton/SecondaryButton.css';
 
 const ControlHolder = styled.div`
   display: flex;

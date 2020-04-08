@@ -15,6 +15,7 @@ import {
   faSun,
 } from '@fortawesome/free-solid-svg-icons';
 import { faBookmark as faBookmarkRegular } from '@fortawesome/free-regular-svg-icons';
+import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 
@@ -55,7 +56,7 @@ const iconsList = {
   faPause,
   faBookmark,
   faBookmarkRegular,
-  faSun
+  faSun,
 };
 
 const IconButton = ({ handleOnClick, iconName, title, srText, color }) => {
@@ -71,3 +72,11 @@ const IconButton = ({ handleOnClick, iconName, title, srText, color }) => {
 };
 
 export default IconButton;
+
+IconButton.propTypes = {
+  handleOnClick: PropTypes.func,
+  iconName: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  srText: PropTypes.string,
+  color: PropTypes.string,
+};
